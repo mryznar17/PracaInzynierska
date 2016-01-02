@@ -1,6 +1,6 @@
 \chapter{Podstawy teoretyczne}
 \label{cha:podstawyTeoretyczne}
-Rozdział ten przedstawia podstawy teoretyczne projektu. W pierwszym porozdziale znajduje się krótkie wprowadzenie do architektóry SOA, na której oparty jest serwis. W następnym opisany jest jezyk implementacji. Trzeci podrozdział prezentuje formę przechowywania danych w serwisie. Ostatni punkt opisuje zaznajamia nas z przenaczeniem serwerów aplikacyjnych i konkretnym zastosowaniu w implementowanym projekcie.
+Rozdział ten przedstawia podstawy teoretyczne projektu. W pierwszym porozdziale znajduje się krótkie wprowadzenie do architektóry SOA, na której oparty jest serwis. W następnym opisany jest język implementacji. Trzeci podrozdział prezentuje formę przechowywania danych w serwisie. Ostatni punkt zaznajamia nas z przenaczeniem serwerów aplikacyjnych i konkretnym zastosowaniu w implementowanym projekcie.
 
 %---------------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ Rozwinięciem skrótu SOA jest \textit{Service Oriented Architecture} czyli arch
 \begin{itemize}
 	\item \textbf{Usługa} - czyli powtarzalne zadanie biznesowe np. Dodawanie plików na serwer lub tworzenie nowego konta.
 	\item \textbf{Orientacja na usługi} - Sposób postrzegania produktu jako zbiór usług połączonych w całość.
-	\item \textbf{SOA} - Podejście architektoniczne? bazujące na zasadach orientacji na usługi.
+	\item \textbf{SOA} - Podejście architektoniczne bazujące na zasadach orientacji na usługi.
 \end{itemize}
 Architektura zorientowana na usługi posiada następujące właściwości:
 \begin{itemize}
@@ -29,30 +29,27 @@ SOA jest architekturą wspierającą modularność więc produkty pisane w tej a
 \section{Java}
 \label{sec:java}
 
-Java została stworzona na początku lat dziewięćdziesiątych przez grupę inżynierów z firmy Sun zwaną "Green Team". Został stworzony do pracy w rozwijającym się środowisku internetu.
-- Na poczatek o samym jezyku, troche historii, ze na rynku jeden z najczesciej uzywanych itd.\newline
-- 
-- No i tutaj napisac, ze Java to super pomysl bo wsparcie dla soa poprzez platforme JEE. \newline
-- Nastepnie opisac sama platforme - to tez troche zajmie \newline
-- Jak juz bede przy tej platformie to przyjebac ze dwie podsekcje o jsf i hibernate \newline
+Język programowania Java został stworzony na początku lat dziewięćdziesiątych przez grupę inżynierów z firmy Sun zwaną "Green Team". Ideą tworzonego języka była praca w rozwijającym się środowisku internetu \cite{Java01}. Java została uformowana na podstawie języka C++ przy czym wymusza ona programowanie obiektowe. Jest jednym z najbardziej popularnych języków programowania i każdy kto miał jakąkolwiek styczność z programowaniem przynajmniej o nim słyszał (Tutaj mam nadzieje, że Paulinka mi zrefaktorujesz to zdanie). 
+
+Java dzięki swojej platformie programistycznej Java EE (Java Enterprise Edition) pozwala pisać multi platformowe, wielowarstwowe niezawodne i bezpieczne aplikacje sieciowe. Dzięki wielu darmowo udostępnianym bibliotekom i frameworkom wielu programistów decyduje się na wybranie tej właśnie platformy \cite{JEE01}. W swojej pracy główne frameworki platformy Java EE pomagające w tworzeniu opisywanej aplikacji to:
+\begin{itemize}
+	\item \textbf{JSF} - Java Server Faces, który upraszcza tworzenie internetowego interfejsu użytkownika, dzięki udostępnianym tagom, z których można korzystać tworząc strony www. Posiada także Managed Beany czyli klasy odpowiedzialne za połączenie logiki aplikacji z widokiem czyli ze stronami internetowymi.
+	\item \textbf{Hibernate} - jest to biblioteka dla języka Java dostarczającą framework do realizacji warstwy dostępu do danych. Zapewnia translację danych z relacyjnej bazy danych na klasy Java i vice versa (Object/Relational Mapping). Zastępuje bezpośrednie metody dostępu do danych za pomocą wysokopoziomowych metod operujących na zmapowanych obiektach.
+\end{itemize}
 
 %---------------------------------------------------------------------------
 
 \section{Przechowywanie danych}
 \label{sec:bazadanych}
+Wirtualne dane można przechowywać na wiele sposobów, najprostszym z nich jest przechowywanie danych lokalnie czyli na dysku twardym stacji roboczej, aczkolwiek w tym wypadku istnieje zagrożenie utraty tych danych w razie zepsucia się komputera. W obawie przed utratą danych użytkownicy często szukają sposobu na umieszczenie ich zapasowej kopii w internecie. Istnieje wiele sposobów na przechowywanie naszych plików w internecie:
+\begin{itemize}
+	\item \textbf{Dyski sieciowe} - jest to typ urządzenia przechowującego dane, które zapewnia dostęp do nich w lokalnej sieci LAN.
+	\item \textbf{Dyski internetowe} - umożliwiają przechowywanie plików w "internecie", tzn. korzystają między innymi z chmur internetowych do zapisu danych. 
+	\item \textbf{Bazy danych} - z tego rozwiązania korzysta się raczej w przypadku ustrukturyzowanych danych np. Informacje o użytkownikach (login użytkownika serwisu w postaci krótkiego pola tekstowego lub rok jego urodzenia w postaci liczby naturalnej). Pomimo tego niektóre bazy danych udostępniają możliwość przechowywania danych w postaci binarniej czyli bez podania ich typu co pozwala na zapisywanie danych bez wymuszonego ich typu.  
+\end{itemize}
 
-- Tutaj będa informacje o bazie danych \newline
-- najpierw moze jakie sa opcje przechowywania danych \newline
-- potem dlaczego akurat baza danych \newline
-- no i na koncu dlaczego postgres \newline
+Do implementacji aplikacji użyto bazy danych. Wybór był podyktowany tym, że platforma Java EE udostępnia framework Hibernate, który pozwala na prosty dostęp do bazy danych. Wybrany system do zarządzania relacyjną bazą danych to PostgreSQL, system ten jest wolnodostępny. Do przechowywania danych o użytkownikach i ich kalendarzach wystarczą podstawowe typy danych dostępne we większości sytemów zarządzających bazą danych. Do przechowywania większych plików takich jak całe książki w dowolnym formacie służy typ danych BLOB czyli Binary Large Objects co jak sama nazwa wskazuje służy do przechowywania większych plików binarnych.
 %---------------------------------------------------------------------------
 \section{Serwer Aplikacyjny}
 \label{sec:serweraplikacyjny}
-
-- Na samym poczatku napisac za co odpowiada serwer aplikacyjny \newline
-- Od kiedy używane i dlaczego sa przydatne \newline
-- Najbardziej znane wymienic i opisac zdawkowo \newline
-- Opisac swoj wybor - dlaczego JBoss \newline
-- JBoss jest darmowy \newline
-- wspiera w pelni JEE \newline
-- jest szybki \newline
+Serwer aplikacyjny jest kontenerem webowym, który odpowiada za przechowywanie, zdalne uruchamianie i użytkowanie aplikacji Java EE. Ponadto pomaga programiście tworzyć aplikacje oraz umożliwia oddzielenie logiki biznesowej od usług dostarczanych przez dany serwer aplikacyjny np. zabezpieczenia aplikacji \cite{SA01}. Najbardziej znane serwery aplikacyjne to JBoss, IBM WebSphere, Apache Tomcat, GlassFish. Serwer używany do implementacji opisywanej aplikacji to JBoss AS 7.1.1. Serwer ten został wybrany ponieważ jest darmowy (udostępniany na licencji \textit{GNU Lesser General Public License}), ponadto implementuje pełen zestaw usług JEE. Dodatkowym argumentem przemawiającym za wyborem właśnie tego serwera była jego intergracja z Eclipse (środowiskiem programistycznym w którym wykonany został projekt) za pomocą wtyczki JBossTools co znacznie ułatwiło pracę. 

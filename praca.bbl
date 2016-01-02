@@ -40,6 +40,89 @@
       \field{title}{SOA Design Principles for Dummies}
       \field{year}{2013}
     \endentry
+    \entry{Java01}{manual}{}
+      \list{organization}{1}{%
+        {Oracle}%
+      }
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{note}{\\\texttt{http://www.oracle.com/technetwork/java/javase/overview/javahistory\-index\-198355.html}}
+      \field{title}{{The History of Java Technology}}
+    \endentry
+    \entry{JEE01}{manual}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{langid}{polish}
+      \field{note}{\\\texttt{http://javastart.pl/static/jee/jee\-wprowadzenie\-do\-javy\-enterprise\-edition/}}
+      \field{title}{{JEE - wprowadzenie do Javy Enterprise Edition}}
+    \endentry
+    \entry{SA01}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=b43c806b73cf57ce858d38773bac6b91}{Matusik}{M\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Uniwersytet Łudzki}%
+      }
+      \strng{namehash}{b43c806b73cf57ce858d38773bac6b91}
+      \strng{fullhash}{b43c806b73cf57ce858d38773bac6b91}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{polish}
+      \field{note}{\\\texttt{http://math.uni.lodz.pl/~radmat/serwery/Wyklad\_d\_01.pdf}}
+      \field{title}{{Serwery aplikacji}}
+    \endentry
+    \entry{DOC01}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=821b0c9d03d0c933ffb368ad24795c3c}{Szwed}{S\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Akademia Górniczo\-Hutnicza}%
+      }
+      \strng{namehash}{821b0c9d03d0c933ffb368ad24795c3c}
+      \strng{fullhash}{821b0c9d03d0c933ffb368ad24795c3c}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{polish}
+      \field{note}{\\\texttt{http://home.agh.edu.pl/~pszwed/wiki/doku.php?id=amo:rup\_tailored}}
+      \field{title}{{Szablon dokumentacji projektowej}}
+      \field{year}{2015}
+    \endentry
+    \entry{DOC02}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=9aaa24ef6b5a2a5ad5c9661a05727c08}{Zmitrowicz}{Z\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{9aaa24ef6b5a2a5ad5c9661a05727c08}
+      \strng{fullhash}{9aaa24ef6b5a2a5ad5c9661a05727c08}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{polish}
+      \field{note}{\\\texttt{http://wymagania.net/baza\-wiedzy/36\-baza\-wiedzy/88\-analiza\-wymagan\-funkcjonalnych}}
+      \field{title}{{Analiza wymagań funkcjonalnych}}
+    \endentry
+    \entry{DOC03}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=a80bf0d144cf1ce1ab4f2da0f492fe8a}{Wesołowska}{W\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a80bf0d144cf1ce1ab4f2da0f492fe8a}
+      \strng{fullhash}{a80bf0d144cf1ce1ab4f2da0f492fe8a}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{polish}
+      \field{note}{\\\texttt{http://analizait.pl/2012/jak\-opisywac\-przypadki\-uzycia/}}
+      \field{title}{{Jak opisywać przypadki użycia?}}
+      \field{year}{2012}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput
