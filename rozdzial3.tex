@@ -56,7 +56,15 @@ Dodatkowe funkcje administratora:
 
 Na kolejnych stronach zostały przedstawione diagramy czynności typowych akcji.
 
-	
+\begin{itemize}
+	\item Rejestracja 
+	\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{Rejestracja}
+	\caption{\label{fig:activity_01}Rejestracja}
+	\end{figure}
+
+\end{itemize}
 \section{Specyfikacja i analiza wymagań}
 Dzięki analizie wymagań funkcjonalnych możemy zidentyfikować oczekiwane zachowania budowanego systemu. Wymaganie funkcjonalne jest to „stwierdzenie, jakie usługi ma oferować system, jak ma reagować na określone dane wejściowe oraz jak ma się zachowywać w określonych sytuacjach. W niektórych wypadkach wymagania funkcjonalne określają, czego system nie powinien robić” \cite{DOC02}. W tym podrozdziale opisane zostaną lista wymagań wunkonalnych oraz niefunkcjonalnych oraz przedstawiony zostanie diagram przypadków użycia z dołączonymi scenariuszami.
 \subsection{Wymagania oprogramowania}
@@ -87,74 +95,14 @@ Poniższe diagramy prezentują możliwe interakcje użytkowników z systemem.
 	\caption{\label{fig:caption_01}Diagram przypadków użycia dla użytkownika}
 \end{figure}
 W poniższym diagramie pominięto przypadki użycia, które posiada zwykły użytkownik, lecz nie należy zapominać, że administrator również je posiada.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.7]{UseCaseAdmin}
-	\caption{\label{fig:caption_01}Diagram przypadków użycia dla administratora}
+	\includegraphics[scale=0.7]{UseCaseAdmin.png}
+	\caption{\label{fig:caption_02}Diagram przypadków użycia dla administratora}
 \end{figure}
 
 Scenariusze przypadków użycia:
-\begin{table}[h]
-\centering
-\caption{Wyloguj}
-\label{wyloguj}
-\begin{tabular}{|p{7cm}|p{7cm}|}
-  \hline 
-  \textbf{Aktorzy:} & Użytkownik, Administrator\\
-  \hline
-  \textbf{Zakres:} & System \\
-	\hline
-  \textbf{Poziom:} & Sytemowowy \\
-	\hline
-  \textbf{Udziałowcy i ich cele: } & Użytkownik chce się wylogować. \\
-	\hline
-  \textbf{Zdarzenie wyzwalające } & Użytkownik wciska przycisk “Wyloguj”. \\
-	\hline
-  \textbf{Warunki wstępne: } & Użytkownik jest zalogowany.
- \\
-	\hline
-  \textbf{Warunki końcowe dla sukcesu:} & Użytkownik jest wylogowany.
- \\
-	\hline
-  \textbf{Warunki końcowe dla niepowodzenia:} & Użytkownik jest zalogowany. \\
-  \hline
-\end{tabular} 
-\end{table}
-\newpage
-\textbf{Scenariusz główny:} \\
-1. Użytkownik wciska przycisk wyloguj widoczny w prawym górnym rogu strony. \\
-2. Pojawia się okno z napisem: “Czy na pewno chcesz się wylogować?” \\
-3. Użytkownik wciska przycisk “tak”. \\
-4. Użytkownik jest wylogowany i przekierowany na stronę główną systemu. \\
-\textbf{Scenariusz alternatywany: \\
-} 
-3.a. Użytkownik wciska “nie”. \\
-3.a.1. Okno z napisem znika, użytkownik dalej jest zalogowany. \\
-
-\begin{table}[h]
-\centering
-\caption{Zarządzaj kontem}
-\label{zarzadzajkontem}
-\begin{tabular}{|p{7cm}|p{7cm}|}
-  \hline 
-  \textbf{Aktorzy:} & Użytkownik, Administrator\\
-  \hline
-  \textbf{Zakres:} & System \\
-	\hline
-  \textbf{Poziom:} & Sytemowowy \\
-	\hline
-  \textbf{Udziałowcy i ich cele: } & Użytkownik chce zmienić login lub hasło. \\
-	\hline
-  \textbf{Zdarzenie wyzwalające } & Użytkownik wciska przycisk “Zarządzaj kontem”. \\
-	\hline
-  \textbf{Warunki wstępne: } & Użytkownik jest zalogowany.\\
-	\hline
-  \textbf{Warunki końcowe dla sukcesu:} & Login lub hasło użytkownika są zmienione.\\
-	\hline
-  \textbf{Warunki końcowe dla niepowodzenia:} & Login lub hasło użytkownika nie są zmienione. \\
-  \hline
-\end{tabular} 
-\end{table}
+\input{scenariusze}
 
 \section{Model systemu}
 nad tym tytulem pomyslec!\newline
