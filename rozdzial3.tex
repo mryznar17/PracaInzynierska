@@ -36,7 +36,7 @@ Wyjścia w systemie:
 \end{itemize}
 \subsection{Lista możliwości}
 \label{listaFun}
-Lista wymagań funkcjonalnych:
+\textbf{Lista wymagań funkcjonalnych:}
 \begin{itemize}
 	\item Logowanie,
 	\item Wylogowanie,
@@ -49,22 +49,33 @@ Lista wymagań funkcjonalnych:
 	\item Otrzymywanie powiadomień,
 \end{itemize}
 
-Dodatkowe funkcje administratora:
+\textbf{Dodatkowe funkcje administratora:}
 \begin{itemize}
 	\item Zarządzanie kontami użytkowników.
 \end{itemize}
 
-Na kolejnych stronach zostały przedstawione diagramy czynności typowych akcji.
 
-\begin{itemize}
-	\item Rejestracja 
-	\begin{figure}[h]
+\textbf{Na kolejnych stronach zostały przedstawione diagramy czynności typowych akcji.}
+	\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.7]{Rejestracja}
+	\includegraphics[scale=0.5]{Rejestracja}
 	\caption{\label{fig:activity_01}Rejestracja}
 	\end{figure}
-
-\end{itemize}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Logowanie}
+	\caption{\label{fig:activity_02}Logowanie}
+	\end{figure}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{DodaniePliku}
+	\caption{\label{fig:activity_03}Dodanie Pliku}
+	\end{figure}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Udostepnienie}
+	\caption{\label{fig:activity_04}Udostępnienie Pliku}
+	\end{figure}
 \section{Specyfikacja i analiza wymagań}
 Dzięki analizie wymagań funkcjonalnych możemy zidentyfikować oczekiwane zachowania budowanego systemu. Wymaganie funkcjonalne jest to „stwierdzenie, jakie usługi ma oferować system, jak ma reagować na określone dane wejściowe oraz jak ma się zachowywać w określonych sytuacjach. W niektórych wypadkach wymagania funkcjonalne określają, czego system nie powinien robić” \cite{DOC02}. W tym podrozdziale opisane zostaną lista wymagań wunkonalnych oraz niefunkcjonalnych oraz przedstawiony zostanie diagram przypadków użycia z dołączonymi scenariuszami.
 \subsection{Wymagania oprogramowania}
@@ -89,13 +100,13 @@ Ryzykiem w implementowanym systemie może być niedostateczne zabezpieczenie baz
 Dzięki przypadkom użycia możemy okeślić jak użytkownik będzie korzystał z systemu. Dzięki diagramowi możemy zobaczyć jakie czynności może wykonywać dany użytkownik \cite{DOC03}. Opisy czynności zawartych na diagramie znajdują się w scenariuszach przypadków użycia.
 
 Poniższe diagramy prezentują możliwe interakcje użytkowników z systemem.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{UseCaseUser}
 	\caption{\label{fig:caption_01}Diagram przypadków użycia dla użytkownika}
 \end{figure}
 W poniższym diagramie pominięto przypadki użycia, które posiada zwykły użytkownik, lecz nie należy zapominać, że administrator również je posiada.
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{UseCaseAdmin.png}
 	\caption{\label{fig:caption_02}Diagram przypadków użycia dla administratora}

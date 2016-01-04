@@ -14,25 +14,25 @@
 \contentsline {subsection}{\numberline {3.1.2}U\IeC {\.z}ytkownicy}{13}
 \contentsline {subsection}{\numberline {3.1.3}Granice systemu}{14}
 \contentsline {subsection}{\numberline {3.1.4}Lista mo\IeC {\.z}liwo\IeC {\'s}ci}{14}
-\contentsline {section}{\numberline {3.2}Specyfikacja i analiza wymaga\IeC {\'n}}{15}
-\contentsline {subsection}{\numberline {3.2.1}Wymagania oprogramowania}{15}
-\contentsline {subsection}{\numberline {3.2.2}Ryzyka operacyjne}{16}
-\contentsline {subsection}{\numberline {3.2.3}Przypadki u\IeC {\.z}ycia}{16}
-\contentsline {section}{\numberline {3.3}Model systemu}{25}
-\contentsline {subsection}{\numberline {3.3.1}Architektutra systemu}{25}
-\contentsline {subsection}{\numberline {3.3.2}Model bazy danych}{25}
-\contentsline {subsection}{\numberline {3.3.3}Model klas}{25}
-\contentsline {subsection}{\numberline {3.3.4}Diagramy sekwencji}{25}
-\contentsline {section}{\numberline {3.4}Projekt interfejsu?}{26}
-\contentsline {chapter}{\numberline {4}Implementacja}{29}
-\contentsline {section}{\numberline {4.1}Architektura}{29}
-\contentsline {subsection}{\numberline {4.1.1}Dost\IeC {\k e}p do bazy danych}{29}
-\contentsline {subsection}{\numberline {4.1.2}Widok aplikacji}{29}
-\contentsline {section}{\numberline {4.2}Zabezpieczenia}{29}
-\contentsline {section}{\numberline {4.3}Testy}{29}
-\contentsline {chapter}{\numberline {5}Wyniki i podrecznik uzytkowania}{31}
-\contentsline {section}{\numberline {5.1}No idea}{31}
-\contentsline {chapter}{\numberline {6}Podsumowanie}{33}
+\contentsline {section}{\numberline {3.2}Specyfikacja i analiza wymaga\IeC {\'n}}{17}
+\contentsline {subsection}{\numberline {3.2.1}Wymagania oprogramowania}{17}
+\contentsline {subsection}{\numberline {3.2.2}Ryzyka operacyjne}{18}
+\contentsline {subsection}{\numberline {3.2.3}Przypadki u\IeC {\.z}ycia}{18}
+\contentsline {section}{\numberline {3.3}Model systemu}{29}
+\contentsline {subsection}{\numberline {3.3.1}Architektutra systemu}{29}
+\contentsline {subsection}{\numberline {3.3.2}Model bazy danych}{29}
+\contentsline {subsection}{\numberline {3.3.3}Model klas}{29}
+\contentsline {subsection}{\numberline {3.3.4}Diagramy sekwencji}{29}
+\contentsline {section}{\numberline {3.4}Projekt interfejsu?}{29}
+\contentsline {chapter}{\numberline {4}Implementacja}{31}
+\contentsline {section}{\numberline {4.1}Architektura}{31}
+\contentsline {subsection}{\numberline {4.1.1}Dost\IeC {\k e}p do bazy danych}{31}
+\contentsline {subsection}{\numberline {4.1.2}Widok aplikacji}{31}
+\contentsline {section}{\numberline {4.2}Zabezpieczenia}{31}
+\contentsline {section}{\numberline {4.3}Testy}{31}
+\contentsline {chapter}{\numberline {5}Wyniki i podrecznik uzytkowania}{33}
+\contentsline {section}{\numberline {5.1}No idea}{33}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{35}
 \select@language {english}
 \select@language {polish}
 \select@language {english}
