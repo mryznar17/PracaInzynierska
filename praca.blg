@@ -1,25 +1,28 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'praca.blg'
-[71] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[72] Biber.pm:333> INFO - Reading 'praca.bcf'
-[371] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.8, expected version 2.7
-[371] Biber.pm:645> INFO - Found 7 citekeys in bib section 0
-[400] Biber.pm:2977> INFO - Processing section 0
-[434] Biber.pm:3115> INFO - Looking for bibtex format file 'bibliografia.bib' for section 0
-[465] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[487] bibtex.pm:895> INFO - Found BibTeX data source 'bibliografia.bib'
-[515] Utils.pm:146> WARN - The field 'author' in entry 'Java01' cannot be null, deleting it
-[515] Utils.pm:146> WARN - The field 'year' in entry 'Java01' cannot be null, deleting it
-[515] Utils.pm:146> WARN - The field 'author' in entry 'JEE01' cannot be null, deleting it
-[515] Utils.pm:146> WARN - The field 'organization' in entry 'JEE01' cannot be null, deleting it
-[515] Utils.pm:146> WARN - The field 'year' in entry 'JEE01' cannot be null, deleting it
-[516] Utils.pm:146> WARN - The field 'year' in entry 'SA01' cannot be null, deleting it
-[516] Utils.pm:146> WARN - The field 'organization' in entry 'DOC02' cannot be null, deleting it
-[516] Utils.pm:146> WARN - The field 'year' in entry 'DOC02' cannot be null, deleting it
-[516] Utils.pm:146> WARN - The field 'organization' in entry 'DOC03' cannot be null, deleting it
-[611] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[611] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[611] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'pl-PL'
-[621] bbl.pm:505> INFO - Writing 'praca.bbl' with encoding 'UTF-8'
-[645] bbl.pm:596> INFO - Output to praca.bbl
-[646] Biber.pm:106> INFO - WARNINGS: 10
+[67] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[67] Biber.pm:333> INFO - Reading 'praca.bcf'
+[363] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.8, expected version 2.7
+[364] Biber.pm:645> INFO - Found 8 citekeys in bib section 0
+[392] Biber.pm:2977> INFO - Processing section 0
+[420] Biber.pm:3115> INFO - Looking for bibtex format file 'bibliografia.bib' for section 0
+[449] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[472] bibtex.pm:895> INFO - Found BibTeX data source 'bibliografia.bib'
+[491] Utils.pm:146> WARN - The field 'author' in entry 'Java01' cannot be null, deleting it
+[491] Utils.pm:146> WARN - The field 'year' in entry 'Java01' cannot be null, deleting it
+[491] Utils.pm:146> WARN - The field 'author' in entry 'JEE01' cannot be null, deleting it
+[491] Utils.pm:146> WARN - The field 'organization' in entry 'JEE01' cannot be null, deleting it
+[491] Utils.pm:146> WARN - The field 'year' in entry 'JEE01' cannot be null, deleting it
+[491] Utils.pm:146> WARN - The field 'year' in entry 'SA01' cannot be null, deleting it
+[492] Utils.pm:146> WARN - The field 'organization' in entry 'DOC02' cannot be null, deleting it
+[492] Utils.pm:146> WARN - The field 'year' in entry 'DOC02' cannot be null, deleting it
+[492] Utils.pm:146> WARN - The field 'organization' in entry 'DOC03' cannot be null, deleting it
+[492] Utils.pm:146> WARN - The field 'author' in entry 'MVC01' cannot be null, deleting it
+[492] Utils.pm:146> WARN - The field 'organization' in entry 'MVC01' cannot be null, deleting it
+[492] Utils.pm:146> WARN - The field 'year' in entry 'MVC01' cannot be null, deleting it
+[699] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[700] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[700] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'pl-PL'
+[711] bbl.pm:505> INFO - Writing 'praca.bbl' with encoding 'UTF-8'
+[739] bbl.pm:596> INFO - Output to praca.bbl
+[739] Biber.pm:106> INFO - WARNINGS: 13

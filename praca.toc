@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {2.2}Java}{10}
 \contentsline {section}{\numberline {2.3}Przechowywanie danych}{10}
 \contentsline {section}{\numberline {2.4}Serwer Aplikacyjny}{11}
-\contentsline {chapter}{\numberline {3}Projekt systemu}{13}
+\contentsline {chapter}{\numberline {3}Opracowanie koncepcji systemu}{13}
 \contentsline {section}{\numberline {3.1}Opis systemu}{13}
 \contentsline {subsection}{\numberline {3.1.1}Cel projektu}{13}
 \contentsline {subsection}{\numberline {3.1.2}U\IeC {\.z}ytkownicy}{13}
@@ -18,21 +18,21 @@
 \contentsline {subsection}{\numberline {3.2.1}Wymagania oprogramowania}{17}
 \contentsline {subsection}{\numberline {3.2.2}Ryzyka operacyjne}{18}
 \contentsline {subsection}{\numberline {3.2.3}Przypadki u\IeC {\.z}ycia}{18}
-\contentsline {section}{\numberline {3.3}Model systemu}{29}
-\contentsline {subsection}{\numberline {3.3.1}Architektutra systemu}{29}
-\contentsline {subsection}{\numberline {3.3.2}Model bazy danych}{29}
-\contentsline {subsection}{\numberline {3.3.3}Model klas}{29}
-\contentsline {subsection}{\numberline {3.3.4}Diagramy sekwencji}{29}
-\contentsline {section}{\numberline {3.4}Projekt interfejsu?}{29}
-\contentsline {chapter}{\numberline {4}Implementacja}{31}
-\contentsline {section}{\numberline {4.1}Architektura}{31}
-\contentsline {subsection}{\numberline {4.1.1}Dost\IeC {\k e}p do bazy danych}{31}
-\contentsline {subsection}{\numberline {4.1.2}Widok aplikacji}{31}
-\contentsline {section}{\numberline {4.2}Zabezpieczenia}{31}
-\contentsline {section}{\numberline {4.3}Testy}{31}
-\contentsline {chapter}{\numberline {5}Wyniki i podrecznik uzytkowania}{33}
-\contentsline {section}{\numberline {5.1}No idea}{33}
-\contentsline {chapter}{\numberline {6}Podsumowanie}{35}
+\contentsline {chapter}{\numberline {4}Projekt architektury systemu}{29}
+\contentsline {section}{\numberline {4.1}Opis architektutry}{29}
+\contentsline {section}{\numberline {4.2}Model bazy danych}{30}
+\contentsline {section}{\numberline {4.3}Model klas}{31}
+\contentsline {section}{\numberline {4.4}Diagramy sekwencji}{31}
+\contentsline {section}{\numberline {4.5}Projekt interfejsu?}{31}
+\contentsline {chapter}{\numberline {5}Implementacja}{33}
+\contentsline {section}{\numberline {5.1}Architektura}{33}
+\contentsline {subsection}{\numberline {5.1.1}Dost\IeC {\k e}p do bazy danych}{33}
+\contentsline {subsection}{\numberline {5.1.2}Widok aplikacji}{33}
+\contentsline {section}{\numberline {5.2}Zabezpieczenia}{33}
+\contentsline {section}{\numberline {5.3}Testy}{33}
+\contentsline {chapter}{\numberline {6}Wyniki i podrecznik uzytkowania}{35}
+\contentsline {section}{\numberline {6.1}No idea}{35}
+\contentsline {chapter}{\numberline {7}Podsumowanie}{37}
 \select@language {english}
 \select@language {polish}
 \select@language {english}
@@ -46,4 +46,6 @@
 \select@language {polish}
 \select@language {polish}
 \select@language {polish}
+\select@language {polish}
+\select@language {english}
 \select@language {polish}

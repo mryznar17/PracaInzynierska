@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  4 JAN 2016 21:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  5 JAN 2016 00:14
 entering extended mode
 **praca.tex
 (praca.tex
@@ -1196,10 +1196,10 @@ LaTeX Warning: Unused global option(s):
     [11pt].
 
 (praca.aux (rozdzial1.aux) (rozdzial2.aux) (rozdzial3.aux) (rozdzial4.aux) (rozdzial5.aux) (rozdzial6.aux)
+(rozdzial7.aux)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
 File: english.lbx 2015/10/21 v3.1 biblatex localization (PK/JW/AB)
 ))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
@@ -1442,7 +1442,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--29
 ) [8] (rozdzial2.tex
 Rozdzia\l  2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--28
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
 
  []
 
@@ -1456,6 +1456,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--28
 
 ]
 Rozdzia\l  3.
+
+LaTeX Warning: Reference `projektSystemu' on page 13 undefined on input line 3.
+
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
 
@@ -1602,35 +1605,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--464
 
  []
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
+)) [28] (rozdzial4.tex
+Rozdzia\l  4.
+<ArchitekturaSystemu.png, id=105, 668.4975pt x 565.11125pt>
+File: ArchitekturaSystemu.png Graphic file (type png)
+ <use ArchitekturaSystemu.png>
+Package pdftex.def Info: ArchitekturaSystemu.png used on input line 16.
+(pdftex.def)             Requested size: 334.24792pt x 282.55493pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
+ [29
+
+
+
+] <ERD.png, id=110, 630.355pt x 550.055pt>
+File: ERD.png Graphic file (type png)
+
+<use ERD.png>
+Package pdftex.def Info: ERD.png used on input line 34.
+(pdftex.def)             Requested size: 315.17673pt x 275.02682pt.
+ [30 <./ArchitekturaSystemu.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--137
-
- []
-
-) [29] (rozdzial4.tex [30
+) [31 <./ERD.png>] (rozdzial5.tex [32
 
 
 
 ]
-Rozdzia\l  4.
+Rozdzia\l  5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--11
 
@@ -1642,77 +1652,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 20--168
+Underfull \hbox (badness 10000) in paragraph at lines 20--169
 
  []
 
-[31] (rozdzial5.tex [32
-
-
-
-]
-Rozdzia\l  5.
-) [33] (rozdzial6.tex [34
+[33] (rozdzial6.tex [34
 
 
 
 ]
 Rozdzia\l  6.
-) [35] [36
+) [35] (rozdzial7.tex [36
+
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 172.
+Rozdzia\l  7.
+) [37] [38
+
+
+]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 173.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (8.66296pt too wide) in paragraph at lines 173--173
+Overfull \hbox (8.66296pt too wide) in paragraph at lines 174--174
 \T1/pcr/m/n/10.95 http://www.oracle.com/technetwork/java/javase/overview/javahistory-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 \T1/pcr/m/n/10.95 http://javastart.pl/static/jee/jee-wprowadzenie-do-javy-enterprise-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 \T1/pcr/m/n/10.95 http://math.uni.lodz.pl/ radmat/serwery/Wyklad_d_01.pdf\T1/ptm/m/n/10.95 . Uni-wer-sy-tet
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 \T1/pcr/m/n/10.95 http://home.agh.edu.pl/ pszwed/wiki/doku.php?id=amo:rup_tailored\T1/ptm/m/n/10.95 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 \T1/pcr/m/n/10.95 http://wymagania.net/baza-wiedzy/36-baza-wiedzy/88-analiza-wymagan-
  []
 
-[37] (praca.aux (rozdzial1.aux) (rozdzial2.aux) (rozdzial3.aux) (rozdzial4.aux) (rozdzial5.aux) (rozdzial6.aux))
+[39] (praca.aux (rozdzial1.aux) (rozdzial2.aux) (rozdzial3.aux) (rozdzial4.aux) (rozdzial5.aux) (rozdzial6.aux)
+(rozdzial7.aux))
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
 Package logreq Info: Writing requests to 'praca.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 23704 strings out of 493673
- 436217 string characters out of 3143959
- 851304 words of memory out of 3000000
- 26675 multiletter control sequences out of 15000+200000
+ 23727 strings out of 493673
+ 436589 string characters out of 3143959
+ 853688 words of memory out of 3000000
+ 26689 multiletter control sequences out of 15000+200000
  75523 words of font info for 84 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 45i,12n,51p,10383b,2733s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,45p,10383b,2734s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (37 pages, 399452 bytes).
+Output written on praca.pdf (39 pages, 462225 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
+ 178 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
