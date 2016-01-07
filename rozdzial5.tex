@@ -1,22 +1,78 @@
 \chapter{Implementacja}
 \label{cha:implementacja}
-Kilka zdań dotyczących zawartości
-poszczególnych podrozdziałów 
+Rozdział ten opisuje najważniejsze szczegóły implementacyjne projektu. W pierwszym podrozdziale znajduje się krótki opis narzędzi użytych do implementacji oraz sposób w jaki ich użyto.
+//tutaj bedzie wymienienie jakie podrozdziały
+\section{Użyte narzędzia}
+Aplikacja została zaimplementowana w środowisku programowania \textbf{Eclipse IDE for Java EE Developers}. Wybór padł właśnie na to IDE (ang. Integrated Development Environment) ponieważ posiada wszystkie niezbędne narzędzia do tworzenia aplikacji JEE. Oprócz domyślnie dostarczanych narzędzi przy implementacji skorzystano również z dodatkowego pluginu JBossTools.
 
-\section{Architektura}
-Opis warstw systemu, rozmieszczenie
-geograficzne oprogramowania \newline
-tutaj pewnie trzeba bedzie napisac ze to na mvc \newline
-no i ze podzielone przez ejb na war, ejb no ten koncowy\newline
-\subsection{Dostęp do bazy danych}
-tutaj subsekcje w jednej dostep do danych dao i hibernate \newline
-\subsection{Widok aplikacji}
-te dwa ponizsze moze w dodatkowych podsekcjach
-JSF \newline
-przykladowe formularze
+Dodatkowym bardzo przydatnym narzędziem użytym do implementacji projektu jest \textbf{Apache Maven}, który jest odpowiedzialny za budowanie aplikacji. Tworzenie aplikacji przy użyciu narzędzia maven opiera się na pliku pom.xml (POM – ang. Project Object Model). Plik ten jest miejscem, w którym znajdują się wszystkie najważniejsze informację definiujące projekt, jego strukturę, to w jaki sposób będzie budowany oraz zależności (TODO: odwołanie do http://blog.atena.pl/wprowadzenie-do-mavena). Dużą zaletą Mavena jest łatwy sposób dodawania potrzebnych bibliotek do projektu, który odbywa się za pomocą dodawania kolejnych zależności do pliku pom.xml, które są automatycznie ściągane z repozytorium mavena. Przykład dodania biblioteki JSF w projekcie:
+\begin{lstlisting}
+      <dependency>
+         <groupId>org.jboss.spec.javax.faces</groupId>
+         <artifactId>jboss-jsf-api_2.1_spec</artifactId>
+         <scope>provided</scope>
+      </dependency>
+\end{lstlisting}
+Maven posiada archetypy czyli dodatkowe narzędzie do generowania szablonów projektów. Przy tworzeniu opisywanej aplikacji skorzystano z tej właśnie funkcjonalności. Szablon tworzy się za pomocą wywołania komendy:
+\begin{lstlisting}
+mvn archetype:generate 
+\end{lstlisting}
+Następnie z pośród tysięcy dostępnych szablonów trzeba wybrać ten, który nas interesuje. W przypadku tego projektu jest to archetyp który buduje szablon aplikacjii JavaEE kompatybilny z serwerem aplikacyjnym JBoss AS 7.1:
+\begin{lstlisting}[breaklines=true]
+remote -> org.jboss.spec.archetypes:jboss-javaee6-webapp-ear-archetype (An archetype that generates a starter Java EE 6 webapp project for JBoss AS 7.1 (by default) or EAP 6 (if the "enterprise" property is true). The project is an EAR, with an EJB-JAR and WAR)
+\end{lstlisting}
+Po wybraniu archetypu następuje definicja nazwy projektu oraz nazwy domyślnego pakietu. Wybrany pakiet dzieli projekt na trzy podprojekty: 
+\begin{itemize}
+	\item EJB - Odpowiedzialny za połączenie z bazą danych. Tutaj znajdują się klasy reprezentujące tabele w bazie danych oraz klasy Bean, które są odpowiedzialne za pobieranie i wstawianie danych z bazy. Podprojekt EJB eksportowany jest w postaci plików JAR (ang. Java archive),
+	\item WEB - W tym podprojekcie znajdują się wszystkie strony html tworzące interfejs użytkownika, oraz klasy Managed Bean, które są odpowiedzialne za połączenie ze stronami html. Podczas budowy aplikacji podprojekt WEB zapisywany jest jako Web archiwe(WAR),
+	\item EAR - Aplikacja eksportowana jest w postaci plików EAR (enterprise archiwe), które zawierają wszystkie podprojekty implementowanej aplikacji (TODO: odwolanie do strony zakomentowanej ponizej)
+%	http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Fcjearproj.html).
+\end{itemize}
+Zbudowany projekt EAR jest lokowany na serwerze aplikacyjnym JBoss.\newline
+
+\section{Oprogramowanie}
+Projekt jak to zostało opisane w poprzednim podrozdziale jest podzielony na trzy podprojekty, z których implementacja znajduje się tylko w częściach WEB i EJB. W tym podrozdziale przybliżona zostanie ich zawartość.
+\subsection{EJB}
+W opisywanym projekcie znajdują się klasy, które zostały wygenerowane dzięki narzędziu JPA Tools (ang. Java Persistance API) z tabel bazy danych opisanych w punkcie \ref{sec:bd}. Przykładowa wygenerowana klasa reprezentująca użytkownika:
+\begin{lstlisting}
+//TODO: Tutaj bedzie klasa entity User
+\end{lstlisting}
+Dzięki frameworkowi JPA i wygenerowanym przez niego klasom nie musimy się odwoływać do tabel z bazy, lecz do powstałych klas.
+
+Aby ułatwić innym komponentom dostęp do bazy danych skorzystano z wzorca projektowego DAO (ang. Data Access Object), który tworzy jednolity interfejs odpowiedzialny za połączenie z bazą danych. DAO sprawia, że warstwa odpowiadająca za logike aplikacji nie musi znać szczegółów implementacyjnych udostępnionego interfejsu co uniezależna tą warstwę od sposobu dostępu do bazy danych.
+Przykładowy interfejs dostępu do bazy danych użytkownika:
+Interfejs:
+\begin{lstlisting}
+//TODO: Tutaj bedzie Interfejs UserDao
+\end{lstlisting}
+Implementacja:
+\begin{lstlisting}
+//TODO: Tutaj bedzie Implementacja UserDaoImpl
+\end{lstlisting}
+Do danych odwołujemy się w następujący sposób:
+\begin{lstlisting}
+//TODO: Tutaj bedzie przykład insertu dao
+\end{lstlisting}
+
+\subsection{WEB}
+Użytkownik kożysta z aplikacją za pomocą przeglądarki internetowej, więc interfejsem są strony www. W implementowanej aplikacji są to pliki z rozszerzeniem html. Głównym frameworkiem pomocnym przy tworzeniu tego interfejsu jest JSF, który udostępnia dodatkowe tagi pomocne przy tworzeniu stron, oraz klasy Managed Bean dzięki którym można się połączyć z tymi stronami.
+Przykładowy formularz odpowiedzialny za rejestracje nowego użytkownika:
+\begin{lstlisting}
+//TODO: Tutaj całą strone html rejestracji wrzucic
+\end{lstlisting}
+Oraz klasa Managed Bean odpowiedzialna za obsługę powyższego formularza:
+\begin{lstlisting}
+//TODO: Tutaj ManagedBean
+\end{lstlisting}
+//TODO: cos wiecej o dzialaniu Managed Beanów\\
 \section{Zabezpieczenia}
-tutaj cos napisac o tych zabezpieczeniach co u rogiusa bazgrałem
+Wszystkie usługi będą udostępniane tylko zalogowanym użytkownikom. Możliwość zarządzania plikami oraz kalendarzem wszystkich użytkowników będzie miał tylko administrator, co będzie autoryzowane za pomocą bazy danych oraz funkcji serwera aplikacyjnego JBoss. Autentykacja użytkownika odbywać się będzie na podstawie danych z bazy danych oraz podsystemu bezpieczeństwa JBoss.\\
+\begin{lstlisting}
+//TODO: Tutaj wrzucic formularz logowania zabezpieczony i opisac go
+\end{lstlisting}
 \section{Testy}
-To chyba mozna tutaj bo tego nie bedzie duzo i nie ma co osobnego rozdzialu\newline
-Moze napisze jakies junity to bedzie cos\newline
-mozna napisac o planach testow manualnych itd\newline
+Aplikacja będzie poddana testom:
+\begin{itemize}
+	\item Jednostkowym – Biblioteka Junit, (Jak zdaze to przykladowy junit)
+	\item Manualnym -Manualnym – sprawdzana będzie zgodność funkcjonalności aplikacji sprawdzana za pomocą przypadków użycia
+\end{itemize}
