@@ -24,7 +24,7 @@ remote -> org.jboss.spec.archetypes:jboss-javaee6-webapp-ear-archetype (An arche
 Po wybraniu archetypu następuje definicja nazwy projektu oraz nazwy domyślnego pakietu. Wybrany pakiet dzieli projekt na trzy podprojekty: 
 \begin{itemize}
 	\item EJB - Odpowiedzialny za połączenie z bazą danych. Tutaj znajdują się klasy reprezentujące tabele w bazie danych oraz klasy Bean, które są odpowiedzialne za pobieranie i wstawianie danych z bazy. Podprojekt EJB eksportowany jest w postaci plików JAR (ang. Java archive),
-	\item WEB - W tym podprojekcie znajdują się wszystkie strony html tworzące interfejs użytkownika, oraz klasy Managed Bean, które są odpowiedzialne za połączenie ze stronami html. Podczas budowy aplikacji podprojekt WEB zapisywany jest jako Web archiwe(WAR),
+	\item WEB - W tym podprojekcie znajdują się wszystkie strony html tworzące interfejs użytkownika, oraz klasy Managed Bean, które są odpowiedzialne za połączenie ze stronami html. Podczas budowy aplikacji podprojekt WEB zapisywany jest jako WAR (ang. Web archiwe),
 	\item EAR - Aplikacja eksportowana jest w postaci plików EAR (enterprise archiwe), które zawierają wszystkie podprojekty implementowanej aplikacji (TODO: odwolanie do strony zakomentowanej ponizej)
 %	http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Fcjearproj.html).
 \end{itemize}
@@ -35,36 +35,298 @@ Projekt jak to zostało opisane w poprzednim podrozdziale jest podzielony na trz
 \subsection{EJB}
 W opisywanym projekcie znajdują się klasy, które zostały wygenerowane dzięki narzędziu JPA Tools (ang. Java Persistance API) z tabel bazy danych opisanych w punkcie \ref{sec:bd}. Przykładowa wygenerowana klasa reprezentująca użytkownika:
 \begin{lstlisting}
-//TODO: Tutaj bedzie klasa entity User
-\end{lstlisting}
-Dzięki frameworkowi JPA i wygenerowanym przez niego klasom nie musimy się odwoływać do tabel z bazy, lecz do powstałych klas.
+package com.inz.model;
 
-Aby ułatwić innym komponentom dostęp do bazy danych skorzystano z wzorca projektowego DAO (ang. Data Access Object), który tworzy jednolity interfejs odpowiedzialny za połączenie z bazą danych. DAO sprawia, że warstwa odpowiadająca za logike aplikacji nie musi znać szczegółów implementacyjnych udostępnionego interfejsu co uniezależna tą warstwę od sposobu dostępu do bazy danych.
-Przykładowy interfejs dostępu do bazy danych użytkownika:
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+/**
+ * The persistent class for the users database table.
+ * 
+ */
+@Entity
+@Table(name="users")
+@NamedQueries({
+	@NamedQuery(name="user.findAll", query="SELECT u FROM User u"),
+	@NamedQuery(name="user.byId", query="select u from User as u where u.userId=:userId"),
+	@NamedQuery(name="user.byLogin", query="select u from User as u where u.login=:login"),
+})
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="user_id", columnDefinition = "serial")
+	private Integer userId;
+	private String email;
+	private String login;
+	private String name;
+	private String password;
+	private String surname;
+
+	//bi-directional many-to-one association to Calendar
+	@OneToMany(mappedBy="user")
+	private List<Calendar> calendars;
+
+	//bi-directional many-to-one association to File
+	@OneToMany(mappedBy="user")
+	private List<File> files;
+
+	//bi-directional many-to-one association to SharedFile
+	@OneToMany(mappedBy="user")
+	private List<SharedFile> sharedFiles;
+
+	//bi-directional many-to-one association to Role
+	@ManyToOne
+	@JoinColumn(name="role_id")
+	private Role role;
+
+	public User() {
+	}
+
+	/* Metody get i set dla wszystkich atrubutów */
+}
+\end{lstlisting}
+W powyższym przykłądzie ominięte zostały metody get i set odpowiadające za pobieranie i ustawianie atrybutów klasy. Właściwości tabeli w wygenerowanej klasie są zachowane dzięki adnotacjom (@Adnotacja), gdzie @Id definiuje klucz główny tabeli, @OneToMany i @ManyToOne relacje zachodzące między tabelami i @Column podający dodatkowe właściwości kolumny, które nie mogą być przedstawione przy pomocy zmiennej w języku Java. Ponadto ponad definicją klasy znajdują się adnotacje @Entity, która oznacza klasę jako reprezentującą tabelę z bazy danych, @Table pozwalająca ustawić nazwę tabeli do której się odwołuje oraz @NamedQueries, która pozwala na zdefiniowanie w prosty sposób zapytań do bazy danych. Dzięki frameworkowi JPA i wygenerowanym przez niego klasom nie musimy się odwoływać do tabel z bazy, lecz do powstałych klas.
+
+Aby ułatwić innym komponentom dostęp do bazy danych skorzystano z wzorca projektowego DAO (ang. Data Access Object), który tworzy jednolity interfejs odpowiedzialny za połączenie z bazą danych. DAO sprawia, że warstwa odpowiadająca za logike aplikacji nie musi znać szczegółów implementacyjnych udostępnionego interfejsu co uniezależna tą warstwę od sposobu dostępu do bazy danych. Poniżej zostanie przedstawiony przykładowy interfejs i jego implementacja odpowiedzialne za zarządzanie tabelą użytkownika.\\
 Interfejs:
 \begin{lstlisting}
-//TODO: Tutaj bedzie Interfejs UserDao
+package com.inz.dao;
+
+import java.util.List;
+import com.inz.model.User;
+
+public interface UserDao {
+	List<User> getUsers();
+	User getUser(int id);
+	User getUser(String login);
+	void updateUser(User user);
+	void deleteUser(int id);
+	void deleteUser(String login);
+	void addUser(String login, String name, String surname, String email, String password);
+	void addUser(User user);
+}
 \end{lstlisting}
 Implementacja:
-\begin{lstlisting}
-//TODO: Tutaj bedzie Implementacja UserDaoImpl
+\begin{lstlisting}[breaklines=true]
+package com.inz.dao.impl;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.inz.dao.UserDao;
+import com.inz.model.User;
+
+@Stateless
+@Local(UserDao.class)
+@TransactionAttribute(TransactionAttributeType.REQUIRED)
+public class UserDaoImpl implements UserDao {
+
+	@PersistenceContext(name="primary")
+	private EntityManager em;
+	
+	@Override
+	public List<User> getUsers() {
+		return em.createNamedQuery("user.findAll").getResultList();
+	}
+
+	@Override
+	public User getUser(int id) {
+		return (User) em.createNamedQuery("user.byId")
+			.setParameter("userId", id).getSingleResult();
+	}
+
+	@Override
+	public User getUser(String login) {
+		return (User) em.createNamedQuery("user.byLogin")
+			.setParameter("login", login).getSingleResult();
+	}
+
+	@Override
+	public void updateUser(User user) {
+		em.merge(user);
+	}
+
+	@Override
+	public void deleteUser(int id) {
+		User u = getUser(id);
+		em.remove(u);
+	}
+
+	@Override
+	public void deleteUser(String login) {
+		User u = getUser(login);
+		em.remove(u);
+	}
+
+	@Override
+	public void addUser(String login, String name, String surname, String email,
+			String password) {
+		User u = new User();
+		u.setLogin(login);
+		u.setName(name);
+		u.setSurname(surname);
+		u.setEmail(email);
+		u.setPassword(password);
+		u.setUserId(generateId());
+		em.persist(u);
+	}
+
+	@Override
+	public void addUser(User user) {
+		if(user.getUserId().equals(null)){
+			user.setUserId(generateId());
+		}
+		em.persist(user);
+	}
+	
+	private int generateId(){
+		List<User> users = getUsers();
+		int id=0;
+		List<Integer> ints = new LinkedList<Integer>();
+		for(User usr:users){
+			ints.add(usr.getUserId());
+		}
+		int i=1;
+		while(true){
+			if(ints.contains(i)) i++;
+			else{
+				id=i;
+				break;
+			}
+		}
+		return id;
+	}
+}
 \end{lstlisting}
-Do danych odwołujemy się w następujący sposób:
+Gdzie najważniejszą zmienną odpowiedzialną za wykonywanie operacji na bazie danych jest instancja klasy EntityManager, która jest "wstrzyknięta" do klasy za pomocą adnotacji @PersistenceContext. Adnotacja @Stateless oznacza, że wstrzykniwany Bean (komponent wielokrotnego użytku w różnych miejscach aplikacji) będzie bezstanowy. Komponent ten jak sama nazwa wskazuje nie posiada żadnego stanu więc wszystkie takie komponenty wywoływane przez różnych użytkowników są identyczne. Adnotacja @Local mówi o tym, że implementowany interfejs znajduje się w tym samym środowisku. Adnotacja @TransactionAttribute(TransactionAttributeType.REQUIRED) wymusza na każdej metodzie, aby była wykonana w ramach tranzakcji już działającej, a jeżeli żadna nie jest rozpoczęta to musi być utworzona nowa. Stworzony bean wstrzykuje się w następujący sposób:
 \begin{lstlisting}
-//TODO: Tutaj bedzie przykład insertu dao
+@EJB private UserDao dao;
 \end{lstlisting}
 
 \subsection{WEB}
-Użytkownik kożysta z aplikacją za pomocą przeglądarki internetowej, więc interfejsem są strony www. W implementowanej aplikacji są to pliki z rozszerzeniem html. Głównym frameworkiem pomocnym przy tworzeniu tego interfejsu jest JSF, który udostępnia dodatkowe tagi pomocne przy tworzeniu stron, oraz klasy Managed Bean dzięki którym można się połączyć z tymi stronami.
+Użytkownik kożysta z aplikacją za pomocą przeglądarki internetowej, więc interfejsem są strony www. W implementowanej aplikacji są to pliki z rozszerzeniem xhtml. Głównym frameworkiem pomocnym przy tworzeniu tego interfejsu jest JSF, który udostępnia dodatkowe tagi pomocne przy tworzeniu stron, oraz klasy Managed Bean dzięki którym można się połączyć z tymi stronami.\\
 Przykładowy formularz odpowiedzialny za rejestracje nowego użytkownika:
-\begin{lstlisting}
-//TODO: Tutaj całą strone html rejestracji wrzucic
+\begin{lstlisting}[breaklines=true]
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"> 
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Rejestracja</title>
+</h:head> 
+<h:body>  
+	Zarejestruj się: 
+	<h:form>
+	<br />
+	   Login: <h:inputText id="login" value="#{userMan.login}" 
+	   			required="true"
+	   			validator="#{userMan.validateLogin}"
+	   			requiredMessage="Pole Login jest wymagane."/> 
+	   			<h:message for="login" style="color:red" /> <br />
+	   Hasło: <h:inputSecret id="password" value="#{userMan.password}" 
+					required="true" 
+	   			validatorMessage="Błąd walidacji: Hasło nie może zawierać znaków specjalnych oraz musi mieć długość od 5 do 30 znaków."
+	   			requiredMessage="Pole Hasło jest wymagane.">  
+	   			<f:validateRegex
+					pattern="[A-Za-z0-9]*{5,30}$" />
+			    </h:inputSecret>
+			    <h:message for="password" style="color:red" /> <br />
+		Imię: <h:inputText id="name" value="#{userMan.name}" 
+				required="true"  
+				requiredMessage="Pole Imię jest wymagane."/> 
+				<h:message for="name" style="color:red" /> <br />
+	Nazwisko: <h:inputText id="surname" value="#{userMan.surname}" 
+				required="true" 
+				requiredMessage="Pole Nazwisko jest wymagane."/> 
+				<h:message for="surname" style="color:red" /> <br />
+	   Email: <h:inputText id="email" value="#{userMan.email}" 
+				required="true" 
+				validatorMessage="Błąd walidacji: Email musi być postaci użytkownik@domena."
+				requiredMessage="Pole Email jest wymagane."> 
+				<f:validateRegex
+					pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+			  </h:inputText>
+			  <h:message for="email" style="color:red" /> <br />
+		<h:commandButton value="Dodaj mnie" action="#{userMan.addUser()}" />
+	</h:form>
+</h:body>
+</html>
 \end{lstlisting}
 Oraz klasa Managed Bean odpowiedzialna za obsługę powyższego formularza:
-\begin{lstlisting}
-//TODO: Tutaj ManagedBean
+\begin{lstlisting}[breaklines=true]
+package com.inz.jsf;
+
+import java.util.List;
+import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
+import com.inz.dao.UserDao;
+import com.inz.model.User;
+
+@ManagedBean(name = "userMan", eager = true)
+@SessionScoped
+public class UserManager {
+	@EJB private UserDao dao;
+	private String login;
+	private String name;
+	private String surname;
+	private String password;
+	private String email;
+	
+	public void ManagedBean(){};
+	
+/* Metody get i set */
+
+	public String addUser(){
+		dao.addUser(login, name, surname, email, password);
+		return "index";
+	}
+	
+	public void validateLogin(FacesContext context, UIComponent component, Object value) throws ValidatorException {
+		  String login = (String) value;
+		  String message = "Błąd walidacji: ";
+		  boolean err = false;
+		  if ( login.length() > 30 || login.length() < 5 ) {
+			  message=message+"Login musi mieś długość od 5 do 30 znaków.";
+			  err=true;
+		  } else if(validateLoginHelper(login)){
+			  message=message+"Użytkownik o podanym loginie znajduje się już w bazie danych.";
+			  err=true;
+		  }  
+		  if(err){
+			  FacesMessage msg = new FacesMessage(message);
+		      throw new ValidatorException(msg);
+		  }
+		}
+	
+	private boolean validateLoginHelper(String login){
+		List<User> users = dao.getUsers();
+		for(User u:users){
+			if(u.getLogin().equals(login)) return true;
+		}
+		return false;
+	}
+}
 \end{lstlisting}
-//TODO: cos wiecej o dzialaniu Managed Beanów\\
+ManagedBean to klasa z frameworku JSF, która jest dostępna ze stron używających tagów JSF. Definiowana jest za pomocą adnotacji @ManagedBean. Adnotacja @SessionScoped definiuje, że Bean żyje tak długo jak sesja HTTP. 
+
+Aby użytkownik nie mógł wprowadzać nieprawidłowych danych przy tworzeniu formularza zastosowano mechanizm walidacji wprowadzanych danych. Użytkownik nie może zostawić pola nieuzupełnionego (required="true"), a ponadto do pola login, hasło i email są sprawdzane pod względem wprowadzanego tekstu. W polach email i hasło sprawdzany jest warunek długości oraz treści wprowadzanego tekstu za pomocą wyrażenia regularnego na stronie JSF (f:validateRegex pattern="warunek"). Pole login walidowane jest za pomocą MangedBeana pod względem długości tekstu (od 5 do 30 znaków) oraz unikalności loginu w systemie. Jeżeli któryś z wyżej opisanych warunków nie zostanie spełniony to po prawej stronie pola pojawi się odpowiedni komunikat w kolorze czerwonym.
+
 \section{Zabezpieczenia}
 Wszystkie usługi będą udostępniane tylko zalogowanym użytkownikom. Możliwość zarządzania plikami oraz kalendarzem wszystkich użytkowników będzie miał tylko administrator, co będzie autoryzowane za pomocą bazy danych oraz funkcji serwera aplikacyjnego JBoss. Autentykacja użytkownika odbywać się będzie na podstawie danych z bazy danych oraz podsystemu bezpieczeństwa JBoss.\\
 \begin{lstlisting}

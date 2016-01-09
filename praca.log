@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  9 JAN 2016 18:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  9 JAN 2016 22:14
 entering extended mode
 **praca.tex
 (praca.tex
@@ -1650,22 +1650,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Overfull \hbox (52.36105pt too wide) in paragraph at lines 52--53
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (57.76111pt too wide) in paragraph at lines 53--54
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Overfull \hbox (57.76111pt too wide) in paragraph at lines 107--108
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39] [40] [41] [42]
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-) [37] (rozdzial7.tex [38
-
-
-
-]
+ [43]) [44] (rozdzial7.tex
 Rozdzia\l  6.
-) [39] [40
+) [45
+
+
+
+] [46
 
 
 ]
@@ -1693,26 +1712,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--175
 \T1/pcr/m/n/10.95 http://wymagania.net/baza-wiedzy/36-baza-wiedzy/88-analiza-wymagan-
  []
 
-[41] (praca.aux (rozdzial1.aux) (rozdzial2.aux) (rozdzial3.aux) (rozdzial4.aux) (rozdzial5.aux) (rozdzial7.aux))
+[47] (praca.aux (rozdzial1.aux) (rozdzial2.aux) (rozdzial3.aux) (rozdzial4.aux) (rozdzial5.aux) (rozdzial7.aux))
 Package logreq Info: Writing requests to 'praca.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 23998 strings out of 493673
- 438581 string characters out of 3143959
- 878817 words of memory out of 3000000
- 26966 multiletter control sequences out of 15000+200000
+ 24002 strings out of 493673
+ 438637 string characters out of 3143959
+ 979817 words of memory out of 3000000
+ 26970 multiletter control sequences out of 15000+200000
  77788 words of font info for 87 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 45i,12n,45p,10383b,2733s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,45p,10383b,3176s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (41 pages, 483509 bytes).
+Output written on praca.pdf (47 pages, 500034 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
+ 203 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
