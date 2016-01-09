@@ -1,28 +1,28 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'praca.blg'
-[66] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[67] Biber.pm:333> INFO - Reading 'praca.bcf'
-[371] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.8, expected version 2.7
-[372] Biber.pm:645> INFO - Found 8 citekeys in bib section 0
-[401] Biber.pm:2977> INFO - Processing section 0
-[427] Biber.pm:3115> INFO - Looking for bibtex format file 'bibliografia.bib' for section 0
-[459] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[483] bibtex.pm:895> INFO - Found BibTeX data source 'bibliografia.bib'
-[499] Utils.pm:146> WARN - The field 'author' in entry 'Java01' cannot be null, deleting it
-[499] Utils.pm:146> WARN - The field 'year' in entry 'Java01' cannot be null, deleting it
-[499] Utils.pm:146> WARN - The field 'author' in entry 'JEE01' cannot be null, deleting it
-[500] Utils.pm:146> WARN - The field 'organization' in entry 'JEE01' cannot be null, deleting it
-[500] Utils.pm:146> WARN - The field 'year' in entry 'JEE01' cannot be null, deleting it
-[500] Utils.pm:146> WARN - The field 'year' in entry 'SA01' cannot be null, deleting it
-[500] Utils.pm:146> WARN - The field 'organization' in entry 'DOC02' cannot be null, deleting it
-[500] Utils.pm:146> WARN - The field 'year' in entry 'DOC02' cannot be null, deleting it
-[500] Utils.pm:146> WARN - The field 'organization' in entry 'DOC03' cannot be null, deleting it
-[500] Utils.pm:146> WARN - The field 'author' in entry 'MVC01' cannot be null, deleting it
-[501] Utils.pm:146> WARN - The field 'organization' in entry 'MVC01' cannot be null, deleting it
-[501] Utils.pm:146> WARN - The field 'year' in entry 'MVC01' cannot be null, deleting it
-[608] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[608] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[608] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'pl-PL'
-[619] bbl.pm:505> INFO - Writing 'praca.bbl' with encoding 'UTF-8'
-[644] bbl.pm:596> INFO - Output to praca.bbl
-[645] Biber.pm:106> INFO - WARNINGS: 13
+[68] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[68] Biber.pm:333> INFO - Reading 'praca.bcf'
+[350] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.8, expected version 2.7
+[351] Biber.pm:645> INFO - Found 8 citekeys in bib section 0
+[381] Biber.pm:2977> INFO - Processing section 0
+[408] Biber.pm:3115> INFO - Looking for bibtex format file 'bibliografia.bib' for section 0
+[439] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[464] bibtex.pm:895> INFO - Found BibTeX data source 'bibliografia.bib'
+[483] Utils.pm:146> WARN - The field 'author' in entry 'Java01' cannot be null, deleting it
+[483] Utils.pm:146> WARN - The field 'year' in entry 'Java01' cannot be null, deleting it
+[483] Utils.pm:146> WARN - The field 'author' in entry 'JEE01' cannot be null, deleting it
+[483] Utils.pm:146> WARN - The field 'organization' in entry 'JEE01' cannot be null, deleting it
+[483] Utils.pm:146> WARN - The field 'year' in entry 'JEE01' cannot be null, deleting it
+[483] Utils.pm:146> WARN - The field 'year' in entry 'SA01' cannot be null, deleting it
+[484] Utils.pm:146> WARN - The field 'organization' in entry 'DOC02' cannot be null, deleting it
+[484] Utils.pm:146> WARN - The field 'year' in entry 'DOC02' cannot be null, deleting it
+[484] Utils.pm:146> WARN - The field 'organization' in entry 'DOC03' cannot be null, deleting it
+[484] Utils.pm:146> WARN - The field 'author' in entry 'MVC01' cannot be null, deleting it
+[484] Utils.pm:146> WARN - The field 'organization' in entry 'MVC01' cannot be null, deleting it
+[484] Utils.pm:146> WARN - The field 'year' in entry 'MVC01' cannot be null, deleting it
+[593] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[593] UCollate.pm:66> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[593] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'pl-PL'
+[604] bbl.pm:505> INFO - Writing 'praca.bbl' with encoding 'UTF-8'
+[629] bbl.pm:596> INFO - Output to praca.bbl
+[630] Biber.pm:106> INFO - WARNINGS: 13

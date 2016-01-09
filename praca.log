@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  7 JAN 2016 00:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  9 JAN 2016 18:08
 entering extended mode
 **praca.tex
 (praca.tex
@@ -1442,7 +1442,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--29
 ) [8] (rozdzial2.tex
 Rozdzia\l  2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--27
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
@@ -1456,9 +1456,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--27
 
 ]
 Rozdzia\l  3.
-
-LaTeX Warning: Reference `projektSystemu' on page 13 undefined on input line 3.
-
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
 
@@ -1499,44 +1496,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [17 <./Udostepnienie.png>] <UseCaseUser.png, id=68, 495.35063pt x 413.29407pt>
 File: UseCaseUser.png Graphic file (type png)
  <use UseCaseUser.png>
-Package pdftex.def Info: UseCaseUser.png used on input line 105.
+Package pdftex.def Info: UseCaseUser.png used on input line 110.
 (pdftex.def)             Requested size: 346.74307pt x 289.30386pt.
 
-<UseCaseAdmin.png, id=69, 369.63094pt x 112.16907pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+<UseCaseAdmin.png, id=72, 369.63094pt x 112.16907pt>
 File: UseCaseAdmin.png Graphic file (type png)
  <use UseCaseAdmin.png>
-Package pdftex.def Info: UseCaseAdmin.png used on input line 111.
+Package pdftex.def Info: UseCaseAdmin.png used on input line 116.
 (pdftex.def)             Requested size: 258.73988pt x 78.51779pt.
- [18 <./UseCaseUser.png>] (scenariusze.tex
+ (scenariusze.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./UseCaseUser.png> <./UseCaseAdmin.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 30--39
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 65--92
+
+ []
+
+[20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19 <./UseCaseAdmin.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 65--92
+ [21]
+Underfull \hbox (badness 10000) in paragraph at lines 121--161
 
  []
 
 
 Underfull \vbox (badness 1478) has occurred while \output is active []
 
- [20]
-Underfull \hbox (badness 10000) in paragraph at lines 121--161
-
- []
-
-[21]
+ [22]
 Underfull \hbox (badness 10000) in paragraph at lines 190--218
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22]
+[23]
 Underfull \hbox (badness 5908) in paragraph at lines 234--235
 []|\T1/ptm/m/n/10.95 U»ytkownik wci-ska przy-cisk udo-st¦p-nij
  []
@@ -1547,32 +1547,35 @@ Underfull \hbox (badness 2205) in paragraph at lines 236--238
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
 Underfull \hbox (badness 10000) in paragraph at lines 247--258
 
- []
-
-
-Underfull \hbox (badness 2205) in paragraph at lines 276--278
-[]|\T1/ptm/m/n/10.95 U»ytkownik jest za-lo-go-wany. U»yt-kow-nik
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24]
+Underfull \hbox (badness 2205) in paragraph at lines 276--278
+[]|\T1/ptm/m/n/10.95 U»ytkownik jest za-lo-go-wany. U»yt-kow-nik
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 286--295
 
  []
 
 
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
+ [25]
 Underfull \hbox (badness 10000) in paragraph at lines 322--328
 
  []
 
-[25]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
 Underfull \hbox (badness 10000) in paragraph at lines 355--374
 
  []
@@ -1582,7 +1585,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 355--374
 
  []
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 402--412
 
  []
@@ -1598,16 +1601,17 @@ Underfull \hbox (badness 3302) in paragraph at lines 429--431
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
 Underfull \hbox (badness 10000) in paragraph at lines 441--464
 
  []
 
-)) [28] (rozdzial4.tex
+[28])) [29] (rozdzial4.tex [30
+
+
+
+]
 Rozdzia\l  4.
-<ArchitekturaSystemu.png, id=105, 668.4975pt x 565.11125pt>
+<ArchitekturaSystemu.png, id=111, 668.4975pt x 565.11125pt>
 File: ArchitekturaSystemu.png Graphic file (type png)
  <use ArchitekturaSystemu.png>
 Package pdftex.def Info: ArchitekturaSystemu.png used on input line 16.
@@ -1615,17 +1619,13 @@ Package pdftex.def Info: ArchitekturaSystemu.png used on input line 16.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29
-
-
-
-] <ERD.png, id=110, 630.355pt x 550.055pt>
+ [31] <ERD.png, id=117, 680.5425pt x 600.2425pt>
 File: ERD.png Graphic file (type png)
 
 <use ERD.png>
 Package pdftex.def Info: ERD.png used on input line 35.
-(pdftex.def)             Requested size: 315.17673pt x 275.02682pt.
- [30 <./ArchitekturaSystemu.png>]
+(pdftex.def)             Requested size: 340.27042pt x 300.12051pt.
+ [32 <./ArchitekturaSystemu.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
  []
@@ -1635,7 +1635,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
-) [31 <./ERD.png>] (rozdzial5.tex [32
+) [33 <./ERD.png>] (rozdzial5.tex [34
 
 
 
@@ -1644,12 +1644,12 @@ Rozdzia\l  5.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 9.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [33]
+) [35]
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-[34]
+[36]
 Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
@@ -1659,13 +1659,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
  []
 
-) [35] (rozdzial7.tex [36
+) [37] (rozdzial7.tex [38
 
 
 
 ]
 Rozdzia\l  6.
-) [37] [38
+) [39] [40
 
 
 ]
@@ -1693,17 +1693,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--175
 \T1/pcr/m/n/10.95 http://wymagania.net/baza-wiedzy/36-baza-wiedzy/88-analiza-wymagan-
  []
 
-[39] (praca.aux (rozdzial1.aux) (rozdzial2.aux) (rozdzial3.aux) (rozdzial4.aux) (rozdzial5.aux) (rozdzial7.aux))
-
-LaTeX Warning: There were undefined references.
-
+[41] (praca.aux (rozdzial1.aux) (rozdzial2.aux) (rozdzial3.aux) (rozdzial4.aux) (rozdzial5.aux) (rozdzial7.aux))
 Package logreq Info: Writing requests to 'praca.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 23999 strings out of 493673
- 438597 string characters out of 3143959
+ 23998 strings out of 493673
+ 438581 string characters out of 3143959
  878817 words of memory out of 3000000
- 26967 multiletter control sequences out of 15000+200000
+ 26966 multiletter control sequences out of 15000+200000
  77788 words of font info for 87 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  45i,12n,45p,10383b,2733s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1713,9 +1710,9 @@ rw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhv
 ts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (39 pages, 470233 bytes).
+Output written on praca.pdf (41 pages, 483509 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 184 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

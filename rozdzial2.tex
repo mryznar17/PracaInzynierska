@@ -9,45 +9,44 @@ Rozdział ten przedstawia podstawy teoretyczne projektu. W pierwszym porozdziale
 
 Rozwinięciem skrótu SOA jest \textit{Service Oriented Architecture} czyli architektura zorientowana na usługi. Według książki \textit{SOA Design Principles for Dummies} SOA składa się z trzech podstawowych aspektów:
 \begin{itemize}
-	\item \textbf{Usługa} - czyli powtarzalne zadanie biznesowe np. Dodawanie plików na serwer lub tworzenie nowego konta.
-	\item \textbf{Orientacja na usługi} - Sposób postrzegania produktu jako zbiór usług połączonych w całość.
+	\item \textbf{Usługa} - czyli powtarzalne zadanie biznesowe np. Dodawanie plików na serwer lub tworzenie nowego konta,
+	\item \textbf{Orientacja na usługi} - Sposób postrzegania produktu jako zbiór usług połączonych w całość,
 	\item \textbf{SOA} - Podejście architektoniczne bazujące na zasadach orientacji na usługi.
 \end{itemize}
 Architektura zorientowana na usługi posiada następujące właściwości:
 \begin{itemize}
-	\item \textbf{Luźne powiązanie usług}
-	\item \textbf{Abstrakcyjne usługi}
-	\item \textbf{Autonomiczność usług}
-	\item \textbf{Możliwość wielokrotnego użycia usług}
-	\item \textbf{Bezstanowość usług}
-	\item \textbf{Dzielenie usług na komponenty}
+	\item \textbf{Luźne powiązanie usług,}
+	\item \textbf{Abstrakcyjne usługi,}
+	\item \textbf{Autonomiczność usług,}
+	\item \textbf{Możliwość wielokrotnego użycia usług,}
+	\item \textbf{Bezstanowość usług,}
+	\item \textbf{Dzielenie usług na komponenty} \cite{SOA13}.
 \end{itemize}
-\cite{SOA13}
-SOA jest architekturą wspierającą modularność więc produkty pisane w tej architekturze łatwo jest rozwijać poprzez dodawanie nowych usług. \newline
+SOA jest architekturą wspierającą modularność więc produkty tworzone w tej architekturze łatwo jest rozwijać poprzez dodawanie nowych usług. \newline
 
 \section{Java}
 \label{sec:java}
 
 Język programowania Java został stworzony na początku lat dziewięćdziesiątych przez grupę inżynierów z firmy Sun zwaną "Green Team". Ideą tworzonego języka była praca w rozwijającym się środowisku internetu \cite{Java01}. Java została uformowana na podstawie języka C++ przy czym wymusza ona programowanie obiektowe. Jest jednym z najbardziej popularnych języków programowania i każdy kto miał jakąkolwiek styczność z programowaniem przynajmniej o nim słyszał (Tutaj mam nadzieje, że Paulinka mi zrefaktorujesz to zdanie). 
 
-Java dzięki swojej platformie programistycznej Java EE (Java Enterprise Edition) pozwala pisać multi platformowe, wielowarstwowe niezawodne i bezpieczne aplikacje sieciowe. Dzięki wielu darmowo udostępnianym bibliotekom i frameworkom wielu programistów decyduje się na wybranie tej właśnie platformy \cite{JEE01}. W swojej pracy główne frameworki platformy Java EE pomagające w tworzeniu opisywanej aplikacji to:
+Java dzięki swojej platformie programistycznej Java EE (Java Enterprise Edition) pozwala pisać multi platformowe, wielowarstwowe, niezawodne i bezpieczne aplikacje sieciowe. Dzięki wielu darmowo udostępnianym bibliotekom i frameworkom wielu programistów decyduje się na wybranie tej właśnie platformy \cite{JEE01}. Główne frameworki platformy Java EE pomagające w tworzeniu opisywanej aplikacji to:
 \begin{itemize}
-	\item \textbf{JSF} - Java Server Faces, który upraszcza tworzenie internetowego interfejsu użytkownika, dzięki udostępnianym tagom, z których można korzystać tworząc strony www. Posiada także Managed Beany czyli klasy odpowiedzialne za połączenie logiki aplikacji z widokiem czyli ze stronami internetowymi.
-	\item \textbf{Hibernate} - jest to biblioteka dla języka Java dostarczającą framework do realizacji warstwy dostępu do danych. Zapewnia translację danych z relacyjnej bazy danych na klasy Java i vice versa (Object/Relational Mapping). Zastępuje bezpośrednie metody dostępu do danych za pomocą wysokopoziomowych metod operujących na zmapowanych obiektach.
+	\item \textbf{JSF} (ang. Java Server Faces) - framework, który upraszcza tworzenie internetowego interfejsu użytkownika, dzięki udostępnianym tagom używanych przy tworzeniu stron internetowych. Posiada także ManagedBeany czyli klasy odpowiedzialne za połączenie logiki aplikacji z widokiem czyli ze stronami internetowymi,
+	\item \textbf{Hibernate} - biblioteka dostarczającą framework do realizacji połączenia z bazą danych. Umożliwia generowanie klas Java na podstawie tabel z bazy danych i na odwrót. Dzięki Hibernate dostęp do bazy danych jest realizowany za pomocą wysokopoziomowych metodach, które operują na zmapowanych wcześniej obiektach. (http://student.agh.edu.pl/~drusieck/hibernate/)
 \end{itemize}
 
 %---------------------------------------------------------------------------
 
 \section{Przechowywanie danych}
 \label{sec:bazadanych}
-Wirtualne dane można przechowywać na wiele sposobów, najprostszym z nich jest przechowywanie danych lokalnie czyli na dysku twardym stacji roboczej, aczkolwiek w tym wypadku istnieje zagrożenie utraty tych danych w razie zepsucia się komputera. W obawie przed utratą danych użytkownicy często szukają sposobu na umieszczenie ich zapasowej kopii w internecie. Istnieje wiele sposobów na przechowywanie naszych plików w internecie:
+Wirtualne dane można przechowywać na wiele sposobów, najprostszym z nich jest przechowywanie danych lokalnie czyli na dysku twardym stacji roboczej, aczkolwiek w tym wypadku istnieje zagrożenie utraty tych danych w razie awarii komputera. W obawie przed utratą danych użytkownicy często szukają sposobu na umieszczenie ich zapasowej kopii w internecie. Istnieje wiele sposobów na przechowywanie naszych plików w internecie:
 \begin{itemize}
-	\item \textbf{Dyski sieciowe} - jest to typ urządzenia przechowującego dane, które zapewnia dostęp do nich w lokalnej sieci LAN.
-	\item \textbf{Dyski internetowe} - umożliwiają przechowywanie plików w "internecie", tzn. korzystają między innymi z chmur internetowych do zapisu danych. 
-	\item \textbf{Bazy danych} - z tego rozwiązania korzysta się raczej w przypadku ustrukturyzowanych danych np. Informacje o użytkownikach (login użytkownika serwisu w postaci krótkiego pola tekstowego lub rok jego urodzenia w postaci liczby naturalnej). Pomimo tego niektóre bazy danych udostępniają możliwość przechowywania danych w postaci binarniej czyli bez podania ich typu co pozwala na zapisywanie danych bez wymuszonego ich typu.  
+	\item \textbf{Dyski sieciowe} - jest to typ urządzenia przechowującego dane, które zapewnia dostęp do nich w lokalnej sieci LAN,
+	\item \textbf{Dyski internetowe} - umożliwiają przechowywanie plików w "internecie", tzn. korzystają między innymi z chmur internetowych do zapisu danych,
+	\item \textbf{Bazy danych} - z tego rozwiązania korzysta się raczej w przypadku ustrukturyzowanych danych np. Informacje o użytkownikach (login użytkownika serwisu w postaci krótkiego pola tekstowego lub rok jego urodzenia w postaci liczby całkowitej). Pomimo tego niektóre bazy danych udostępniają możliwość przechowywania danych w postaci binarniej czyli bez podania ich typu co pozwala na zapisywanie danych bez wymuszonego ich typu.  
 \end{itemize}
 
-Do implementacji aplikacji użyto bazy danych. Wybór był podyktowany tym, że platforma Java EE udostępnia framework Hibernate, który pozwala na prosty dostęp do bazy danych. Wybrany system do zarządzania relacyjną bazą danych to PostgreSQL, system ten jest wolnodostępny. Do przechowywania danych o użytkownikach i ich kalendarzach wystarczą podstawowe typy danych dostępne we większości sytemów zarządzających bazą danych. Do przechowywania większych plików takich jak całe książki w dowolnym formacie służy typ danych BLOB czyli Binary Large Objects co jak sama nazwa wskazuje służy do przechowywania większych plików binarnych.
+Do implementacji aplikacji użyto bazy danych. Wybór był podyktowany tym, że platforma Java EE udostępnia framework Hibernate, który pozwala na prosty dostęp do bazy danych. Wybrany system do zarządzania relacyjną bazą danych to PostgreSQL, system ten jest wolnodostępny. Do przechowywania danych o użytkownikach i ich kalendarzach wystarczą podstawowe typy danych dostępne we większości sytemów zarządzających bazą danych. Do przechowywania większych plików takich jak całe książki w dowolnym formacie służy typ danych BYTEA przechowujący pliki binarne.
 %---------------------------------------------------------------------------
 \section{Serwer Aplikacyjny}
 \label{sec:serweraplikacyjny}

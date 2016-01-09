@@ -1,6 +1,6 @@
 \chapter{Opracowanie koncepcji systemu}
 \label{cha:koncepcjaSystemu}
-Rozdział ten w dwóch podrozdziałach przedstawia koncepcję implementowanej aplikacji. W podrozdziale pierwszym opisany jest system, w drugim znajduje się specyfikacja wymagań. Dokumentacja projektu zawarta w tym rozdziale oraz w \ref{projektSystemu} została częściowo oprata na szablonie dokumentacji projektu stworzonym przez dr Piotra Szweda \cite{DOC01}.
+Rozdział ten w dwóch podrozdziałach przedstawia koncepcję implementowanej aplikacji. W podrozdziale pierwszym opisany jest system, w drugim znajduje się specyfikacja wymagań. Dokumentacja projektu zawarta w tym rozdziale oraz w następnym została częściowo oprata na szablonie dokumentacji projektu stworzonym przez dr Piotra Szweda \cite{DOC01}.
 \section{Opis systemu}
 W tym podrozdziale opisany jest cel systemu, jego granice, lista możliwości systemu oraz jego użytkownicy. Ponadto za pomocą diagramów aktywności przedstawione jest działanie aplikacji.
 \subsection{Cel projektu}
@@ -9,7 +9,7 @@ Celem projektu jest implementacja serwisu internetowego dedykowanego dla student
 \subsection{Użytkownicy}
 Grupę użytkowników stanowią wszyscy korzystającyz serwisu, z wyszczególnieniem:
 \begin{itemize}
-	\item \textbf{Użytkownik} - Docelowym użytkownikiem serwisu jest student potrzebujący dodać lub uzyskać dostęp do pliku poprzez udostępnienie od innych użytkowników serwisu. Nie jest warunkiem koniecznym, aby użytkownik był studentem.
+	\item \textbf{Użytkownik} - Docelowym użytkownikiem serwisu jest student potrzebujący dodać lub uzyskać dostęp do pliku poprzez udostępnienie od innych użytkowników serwisu. Nie jest warunkiem koniecznym, aby użytkownik był studentem,
 	\item \textbf{Administrator} - Użytkownik posiadający szystkie uprawnienia, takie jak usówanie użytkowników oraz wgląd do wszystkich plików w systemie.
 \end{itemize}
 
@@ -21,15 +21,15 @@ Wejścia w systemie:
 	\item formularz nowego konta – użytkownik wypełnia dane: login, hasło, imie, nazwisko, adres e-mail,
 	\item formularz logowania – zalogowanie się do systemu za pomocą loginu i hasła użytkownika,
 	\item formularz edycji konta – zmiana danych użytkownika,
-	\item formularz nowego pliku – załączonik oraz opcjonalnie tytuł i opis pliku,
+	\item formularz nowego pliku – załącznik oraz opcjonalnie tytuł i opis pliku,
 	\item formularz edycji pliku - zmiana załącznika, tytułu lub opisu,
 	\item formularz udostępnienia pliku - login użytkownika, któremu ma być udostępniony wybrany plik,
 	\item formularz nowego wydarzenia - wybrana data, nazwa wydarzenia oraz opcjonalny opis,
-	\item formularz edycji wydarzenia - nowe dane do wybranego wydarzenia,
+	\item formularz edycji wydarzenia - nowe dane do wybranego wydarzenia.
 \end{itemize}
 Wyjścia w systemie:
 \begin{itemize}
-	\item Strona powiadomień - na tej stronie znajdować się będą informacje o udostępnionych plikach oraz o przypomnienia o nadchodzących wydarzeniach.
+	\item Strona powiadomień - na tej stronie znajdować się będą informacje o udostępnionych plikach oraz o przypomnienia o nadchodzących wydarzeniach,
 	\item Strona przeglądania własnych plików - użytkownik na tej stronie może przeglądać dodane przez siebie pliki,
 	\item Strona przeglądania udostępnionych plików - tutaj użytkownik będzie mógł przeglądać pliki mu udostępnione,
 	\item Strona kalendarza - Strona odpowiedzialna za wyświetlanie kalendarza.
@@ -46,7 +46,7 @@ Wyjścia w systemie:
 	\item Pobieranie pliku,
 	\item Udostępnianie pliku,
 	\item Zarządzanie kalendarzem,
-	\item Otrzymywanie powiadomień,
+	\item Otrzymywanie powiadomień.
 \end{itemize}
 
 \textbf{Dodatkowe funkcje administratora:}
@@ -94,8 +94,13 @@ Wymagania niefunkcjonalne:
 		\end{itemize}
 \end{enumerate}
 \subsection{Ryzyka operacyjne}
-Ryzykiem w implementowanym systemie może być niedostateczne zabezpieczenie bazy danych lub pojawienie się nieobsłużonych błędów.
-//TODO: Poszukać i dodać tu jeszcze cos
+Przy implementacji systemu instnieje wiele ryzyk operacyjnych. W opisywanym projekcie są to:
+\begin{itemize}
+	\item Niedostateczne zabiezpieczenie bazy danych przed nieautoryzowanym dostępem,
+	\item Przeciążenie bazy danych przez zbyt wielu użytkowników i zapisywane przez nich pliki,
+	\item Nieprzystosowanie serwera do dużego obciążenia,
+	\item Nieobsłużenie ważnych błędów.
+\end{itemize}
 \subsection{Przypadki użycia}
 Dzięki przypadkom użycia możemy okeślić jak użytkownik będzie korzystał z systemu. Dzięki diagramowi możemy zobaczyć jakie czynności może wykonywać dany użytkownik \cite{DOC03}. Opisy czynności zawartych na diagramie znajdują się w scenariuszach przypadków użycia.
 
