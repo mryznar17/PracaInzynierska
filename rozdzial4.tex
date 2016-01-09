@@ -1,6 +1,6 @@
 \chapter{Projekt architektury systemu}
 \label{cha:projektSystemu}
-W tym rozdziale omówiona zostanie architektura implementowanego systemu. W pierwszym podrozdziale znajduje się ogólny opis używanej archikterktury, w następnym model bazy danych, który poprzedza model klas. W czwartym podrozdziale przedstawiony jest diagram sekwencji.
+W tym rozdziale omówiona zostanie architektura implementowanego systemu. W pierwszym podrozdziale znajduje się ogólny opis używanej archikterktury, w następnym model bazy danych, a w ostatnim model klas.
 \section{Opis architektutry}
 Implementowany projekt jest oparty na architekturze SOA (wyjaśnionej w podrozdziale \ref{sec:soa}), która została wybrana przede wszystkim ze względu na podział aplikacji na niezależne od siebie moduły. Dzięki modularności w łatwy sposób można dodawać nowe funkcjonalności do projektu poprzez wstawianie kolejnych usług. Oprócz opisanej wcześniej architektury do implementacji projektu został użyty wzorzec projektowy MVC (\textit{ang. Model View Controller}), który jak sama nazwa wskazuje odpowiada za podzielenie aplikacji na trzy częśći:
 \begin{itemize}
@@ -8,7 +8,6 @@ Implementowany projekt jest oparty na architekturze SOA (wyjaśnionej w podrozdz
 	\item View - widok odpowiada za interakcję użytkownika z systemem czyli graficzny interfejs użytkownika,
 	\item Controller - kontroler oddziałuje pomiędzy modelem a widokiem i kontroluje przepływ danych pomiędzy nimi. \cite{MVC01}
 \end{itemize}
-MVC jest na niższym poziomie abstrakcji niż SOA dzięki czemu mogą razem koegzystować. 
 
 Opisywaną architekturę przedstawia poniższy model komponentów:
 \begin{figure}[H]
@@ -37,12 +36,15 @@ Model bazy danych przedstawiony jest poniżej na diagramie ERD:
 \end{figure}
 
 \section{Model klas}
-- rowniez jakis ladny wstep \newline
-- No i diagram klas tutaj ładnie sklepać trzeba będzie \newline
-
-\section{Diagramy sekwencji}
-- Wstep, ze to wynika z diagramu klas, cos ładnego o diagramach sekwencji - tutaj moze sie wykładami szweda posłużyć \newline
-- No i wklepac diagramy sekwencji - moze nie bedzie tak zle jak już beda diagramy klas \newline
-\section {Projekt interfejsu?}
-Nad tym sie zastanowic czy to robic czy dac dupie siana
-
+Model klas w postaci diagramu UML reprezentujący tabele z bazy danych:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{ENTITIES}
+\caption{\label{fig:uml_01}Diagram Klas Encji}
+\end{figure}
+Za połączenie z bazą danych odpowiada wzorzec projektowy DAO (omówiony w \ref{subsec:ejb}), który przedstawiony jest na poniższym diagramie.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5,angle=90,origin=c]{DAO_UML}
+\caption{\label{fig:uml_02}Diagram Klas DAO}
+\end{figure}
