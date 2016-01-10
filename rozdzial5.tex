@@ -1,7 +1,6 @@
 \chapter{Implementacja}
 \label{cha:implementacja}
-Rozdział ten opisuje najważniejsze szczegóły implementacyjne projektu. W pierwszym podrozdziale znajduje się krótki opis narzędzi użytych do implementacji oraz sposób w jaki ich użyto.
-//tutaj bedzie wymienienie jakie podrozdziały
+Rozdział ten opisuje najważniejsze szczegóły implementacyjne projektu. W pierwszym podrozdziale znajduje się krótki opis narzędzi użytych do implementacji oraz sposób w jaki ich użyto. W drugim znajduje się opis podprojektów, a w trzecim metody zabezpieczeń systemu.
 \section{Użyte narzędzia}
 Aplikacja została zaimplementowana w środowisku programowania \textbf{Eclipse IDE for Java EE Developers}. Wybór padł właśnie na to IDE (ang. Integrated Development Environment) ponieważ posiada wszystkie niezbędne narzędzia do tworzenia aplikacji JEE. Oprócz domyślnie dostarczanych narzędzi przy implementacji skorzystano również z dodatkowego pluginu JBossTools.
 
@@ -92,7 +91,7 @@ W powyższym przykłądzie ominięte zostały metody get i set odpowiadające za
 
 Aby ułatwić innym komponentom dostęp do bazy danych skorzystano z wzorca projektowego DAO (ang. Data Access Object), który tworzy jednolity interfejs odpowiedzialny za połączenie z bazą danych. DAO sprawia, że warstwa odpowiadająca za logike aplikacji nie musi znać szczegółów implementacyjnych udostępnionego interfejsu co uniezależna tą warstwę od sposobu dostępu do bazy danych. Poniżej zostanie przedstawiony przykładowy interfejs i jego implementacja odpowiedzialne za zarządzanie tabelą użytkownika.\\
 Interfejs:
-\begin{lstlisting}
+\begin{lstlisting}[breaklines=true]
 package com.inz.dao;
 
 import java.util.List;
@@ -342,11 +341,16 @@ W celu stworzenia logowania do systemu skorzystano z pomocy modułu logowania \t
 	</authentication>
 </security-domain>
 \end{lstlisting}
-Powyższy wpis definiuje moduł logowania korzystający z weryfikacji za pomocą bazy danych zdefiniowanej w źródle danych \textit{StudentServisDataSource}. Następnie przygotowany jest specjalny formularz logowania, po czym w pliku xml między znacznikami <security-constraint> definiowane są strony, do których dostęp ma tylko zalogowany użytkownik, a pomiędzy <login-config> znajduje sie adres strony zawierającej formularz logowania.
-//TODO: Dopisac o tym jak sa zrealizowane funkcje tylko dla admina (BEANY!)  
-\section{Testy}
-Aplikacja będzie poddana testom:
-\begin{itemize}
-	\item Jednostkowym – Biblioteka Junit, (Jak zdaze to przykladowy junit)
-	\item Manualnym -Manualnym – sprawdzana będzie zgodność funkcjonalności aplikacji sprawdzana za pomocą przypadków użycia
-\end{itemize}
+Powyższy wpis definiuje moduł logowania korzystający z weryfikacji za pomocą bazy danych zdefiniowanej w źródle danych \textit{StudentServisDataSource}. Następnie przygotowany jest specjalny formularz logowania, po czym w pliku xml między znacznikami <security-constraint> definiowane są strony, do których dostęp ma tylko zalogowany użytkownik. Dodatkowo w pliku web.xml definiowane są strony logowania do których niezalogowany użytkownik jest przekierowywany gdy chce uzyskać dostęp do stron objętych ochroną:
+\begin{lstlisting}[breaklines=true]
+		<form-login-config>
+			<form-login-page>/login.xhtml</form-login-page>
+			<form-error-page>/login_error.xhtml</form-error-page>
+		</form-login-config>
+\end{lstlisting}
+Aby przydzielić niektóre funkcje systemu tylko administratorowi nad ManagedBeanem wstawiane są następujące adnotacje:
+\begin{lstlisting}[breaklines=true]
+@RolesAllowed("admin")
+@SecurityDomain("postgresql-domain") 
+\end{lstlisting} 
+Gdzie adnotacja @SecurityDomain definiuje baze danych na podstawie której użytkownik rola użytkownika jest weryfikowana.

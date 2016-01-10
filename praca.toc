@@ -28,7 +28,6 @@
 \contentsline {subsection}{\numberline {5.2.1}EJB}{38}
 \contentsline {subsection}{\numberline {5.2.2}WEB}{43}
 \contentsline {section}{\numberline {5.3}Zabezpieczenia}{46}
-\contentsline {section}{\numberline {5.4}Testy}{46}
 \contentsline {chapter}{\numberline {6}Podsumowanie}{47}
 \select@language {english}
 \select@language {polish}
