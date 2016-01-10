@@ -329,10 +329,21 @@ ManagedBean to klasa z frameworku JSF, która jest dostępna ze stron używając
 Aby użytkownik nie mógł wprowadzać nieprawidłowych danych przy tworzeniu formularza zastosowano mechanizm walidacji wprowadzanych danych. Użytkownik nie może zostawić pola nieuzupełnionego (required="true"), a ponadto do pola login, hasło i email są sprawdzane pod względem wprowadzanego tekstu. W polach email i hasło sprawdzany jest warunek długości oraz treści wprowadzanego tekstu za pomocą wyrażenia regularnego na stronie JSF (f:validateRegex pattern="warunek"). Pole login walidowane jest za pomocą MangedBeana pod względem długości tekstu (od 5 do 30 znaków) oraz unikalności loginu w systemie. Jeżeli któryś z wyżej opisanych warunków nie zostanie spełniony to po prawej stronie pola pojawi się odpowiedni komunikat w kolorze czerwonym.
 
 \section{Zabezpieczenia}
-Wszystkie usługi będą udostępniane tylko zalogowanym użytkownikom. Możliwość zarządzania plikami oraz kalendarzem wszystkich użytkowników będzie miał tylko administrator, co będzie autoryzowane za pomocą bazy danych oraz funkcji serwera aplikacyjnego JBoss. Autentykacja użytkownika odbywać się będzie na podstawie danych z bazy danych oraz podsystemu bezpieczeństwa JBoss.\\
-\begin{lstlisting}
-//TODO: Tutaj wrzucic formularz logowania zabezpieczony i opisac go
+Wszystkie usługi będą udostępniane tylko zalogowanym użytkownikom. Możliwość zarządzania plikami oraz kalendarzem wszystkich użytkowników posiada tylko administrator, co jest autoryzowane za pomocą bazy danych oraz funkcji serwera aplikacyjnego JBoss. Autentykacja użytkownika odbywać się będzie na podstawie danych z bazy danych oraz podsystemu bezpieczeństwa JBoss.\\
+W celu stworzenia logowania do systemu skorzystano z pomocy modułu logowania \textit{Database} dostarczanego przez serwer aplikacyjny JBoss. Aby zrealizować autoryzację w pierwszej kolejności trzeba dodać odpowiednie elementy do pliku konfiguracyjnego serwera JBoss (standalone.xml):
+\begin{lstlisting}[breaklines=true]
+<security-domain name="postgresql-domain" cache-type="default">
+	<authentication>
+		<login-module code="Database" flag="required">
+			<module-option name="dsJndiName" value="java:jboss/datasources/StudentServisDataSource"/>
+			<module-option name="principalsQuery" value="select password from users where login=?"/>
+			<module-option name="rolesQuery" value="select role_name, 'Roles' as Roles from role r join users u on (r.role_id=u.role_id) where u.login=?"/>
+		</login-module>
+	</authentication>
+</security-domain>
 \end{lstlisting}
+Powyższy wpis definiuje moduł logowania korzystający z weryfikacji za pomocą bazy danych zdefiniowanej w źródle danych \textit{StudentServisDataSource}. Następnie przygotowany jest specjalny formularz logowania, po czym w pliku xml między znacznikami <security-constraint> definiowane są strony, do których dostęp ma tylko zalogowany użytkownik, a pomiędzy <login-config> znajduje sie adres strony zawierającej formularz logowania.
+//TODO: Dopisac o tym jak sa zrealizowane funkcje tylko dla admina (BEANY!)  
 \section{Testy}
 Aplikacja będzie poddana testom:
 \begin{itemize}
