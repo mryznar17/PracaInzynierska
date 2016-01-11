@@ -1,8 +1,6 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \select@language {polish}
 \contentsline {chapter}{\numberline {1}Wprowadzenie}{7}
-\contentsline {section}{\numberline {1.1}Przedmowa - Przerobic na ladny tekst}{7}
-\contentsline {section}{\numberline {1.2}Cel pracy}{7}
 \contentsline {chapter}{\numberline {2}Podstawy teoretyczne}{9}
 \contentsline {section}{\numberline {2.1}SOA}{9}
 \contentsline {section}{\numberline {2.2}Java}{10}
@@ -12,7 +10,7 @@
 \contentsline {section}{\numberline {3.1}Opis systemu}{13}
 \contentsline {subsection}{\numberline {3.1.1}Cel projektu}{13}
 \contentsline {subsection}{\numberline {3.1.2}U\IeC {\.z}ytkownicy}{13}
-\contentsline {subsection}{\numberline {3.1.3}Granice systemu}{14}
+\contentsline {subsection}{\numberline {3.1.3}Granice systemu}{13}
 \contentsline {subsection}{\numberline {3.1.4}Lista mo\IeC {\.z}liwo\IeC {\'s}ci}{14}
 \contentsline {section}{\numberline {3.2}Specyfikacja i analiza wymaga\IeC {\'n}}{17}
 \contentsline {subsection}{\numberline {3.2.1}Wymagania oprogramowania}{17}

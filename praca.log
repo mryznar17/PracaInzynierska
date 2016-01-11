@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  10 JAN 2016 18:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.28)  11 JAN 2016 17:54
 entering extended mode
 **praca.tex
 (praca.tex
@@ -1394,7 +1394,12 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
 
 [1
 
-{C:/Users/Marek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./agh.jpg>] [2
+{C:/Users/Marek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./agh.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
+
+ []
+
+[2
 
 ]
 Underfull \hbox (badness 3690) in paragraph at lines 151--151
@@ -1410,51 +1415,30 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 164.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 164.
- (praca.toc [5
-
-])
+ (praca.toc)
 \tf@toc=\write4
- [6] (rozdzial1.tex
-Rozdzia\l  1.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 12.
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
+ [5
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--26
-
- []
-
-[7
+] (rozdzial1.tex [6
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 27--29
+Rozdzia\l  1.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
+) [7] (rozdzial2.tex [8
 
- []
 
-) [8] (rozdzial2.tex
+
+]
 Rozdzia\l  2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[9
-
-
-
-] [10]) [11] (rozdzial3.tex [12
+[9] [10]) [11] (rozdzial3.tex [12
 
 
 
@@ -1462,33 +1446,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 Rozdzia\l  3.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
-
-Underfull \vbox (badness 3780) has occurred while \output is active []
-
- [13] [14]
-<Rejestracja.png, id=55, 770.88pt x 666.23906pt>
+[13] [14] <Rejestracja.png, id=54, 770.88pt x 666.23906pt>
 File: Rejestracja.png Graphic file (type png)
  <use Rejestracja.png>
 Package pdftex.def Info: Rejestracja.png used on input line 61.
 (pdftex.def)             Requested size: 385.43906pt x 333.11871pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 62.
- <Logowanie.png, id=56, 770.88pt x 518.6878pt>
-File: Logowanie.png Graphic file (type png)
 
-<use Logowanie.png>
+<Logowanie.png, id=55, 770.88pt x 518.6878pt>
+File: Logowanie.png Graphic file (type png)
+ <use Logowanie.png>
 Package pdftex.def Info: Logowanie.png used on input line 66.
 (pdftex.def)             Requested size: 385.43906pt x 259.34326pt.
- <DodaniePliku.png, id=57, 770.88pt x 614.295pt>
+ <DodaniePliku.png, id=56, 770.88pt x 614.295pt>
 File: DodaniePliku.png Graphic file (type png)
- <use DodaniePliku.png>
+
+<use DodaniePliku.png>
 Package pdftex.def Info: DodaniePliku.png used on input line 71.
 (pdftex.def)             Requested size: 385.43906pt x 307.14674pt.
 
-Underfull \vbox (badness 4001) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15 <./Rejestracja.png>]
-<Udostepnienie.png, id=61, 770.88pt x 682.04813pt>
+<Udostepnienie.png, id=60, 770.88pt x 682.04813pt>
 File: Udostepnienie.png Graphic file (type png)
  <use Udostepnienie.png>
 Package pdftex.def Info: Udostepnienie.png used on input line 76.
@@ -1497,30 +1478,30 @@ Package pdftex.def Info: Udostepnienie.png used on input line 76.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16 <./Logowanie.png> <./DodaniePliku.png>]
-[17 <./Udostepnienie.png>] <UseCaseUser.png, id=68, 495.35063pt x 413.29407pt>
+[17 <./Udostepnienie.png>] <UseCaseUser.png, id=67, 495.35063pt x 413.29407pt>
 File: UseCaseUser.png Graphic file (type png)
  <use UseCaseUser.png>
-Package pdftex.def Info: UseCaseUser.png used on input line 110.
+Package pdftex.def Info: UseCaseUser.png used on input line 111.
 (pdftex.def)             Requested size: 346.74307pt x 289.30386pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
-<UseCaseAdmin.png, id=72, 369.63094pt x 112.16907pt>
+<UseCaseAdmin.png, id=71, 369.63094pt x 112.16907pt>
 File: UseCaseAdmin.png Graphic file (type png)
  <use UseCaseAdmin.png>
-Package pdftex.def Info: UseCaseAdmin.png used on input line 116.
+Package pdftex.def Info: UseCaseAdmin.png used on input line 117.
 (pdftex.def)             Requested size: 258.73988pt x 78.51779pt.
  (scenariusze.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19 <./UseCaseUser.png> <./UseCaseAdmin.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 30--39
+Underfull \hbox (badness 10000) in paragraph at lines 30--38
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--92
+Underfull \hbox (badness 10000) in paragraph at lines 64--91
 
  []
 
@@ -1528,7 +1509,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--92
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-Underfull \hbox (badness 10000) in paragraph at lines 121--161
+Underfull \hbox (badness 10000) in paragraph at lines 120--160
 
  []
 
@@ -1536,35 +1517,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--161
 Underfull \vbox (badness 1478) has occurred while \output is active []
 
  [22]
-Underfull \hbox (badness 10000) in paragraph at lines 190--218
+Underfull \hbox (badness 10000) in paragraph at lines 189--217
 
  []
 
 [23]
-Underfull \hbox (badness 5908) in paragraph at lines 234--235
+Underfull \hbox (badness 5908) in paragraph at lines 233--234
 []|\T1/ptm/m/n/10.95 U»ytkownik wci-ska przy-cisk udo-st¦p-nij
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 236--238
+Underfull \hbox (badness 2205) in paragraph at lines 235--237
 []|\T1/ptm/m/n/10.95 U»ytkownik jest za-lo-go-wany. U»yt-kow-nik
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--258
+Underfull \hbox (badness 10000) in paragraph at lines 246--257
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
-Underfull \hbox (badness 2205) in paragraph at lines 276--278
+[24]
+Underfull \hbox (badness 2205) in paragraph at lines 275--277
 []|\T1/ptm/m/n/10.95 U»ytkownik jest za-lo-go-wany. U»yt-kow-nik
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--295
+Underfull \hbox (badness 10000) in paragraph at lines 285--294
 
  []
 
@@ -1572,7 +1550,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--295
 Underfull \vbox (badness 2073) has occurred while \output is active []
 
  [25]
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
+Underfull \hbox (badness 10000) in paragraph at lines 321--327
 
  []
 
@@ -1580,42 +1558,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 322--328
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
-Underfull \hbox (badness 10000) in paragraph at lines 355--374
+Underfull \hbox (badness 10000) in paragraph at lines 354--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--374
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+ [27]
+Underfull \hbox (badness 10000) in paragraph at lines 401--411
 
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 402--412
 
- []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 426--428
+Underfull \hbox (badness 2050) in paragraph at lines 425--427
 []|\T1/ptm/m/n/10.95 Administrator chce usu-n¡¢, lub edy-to-wa¢
  []
 
 
-Underfull \hbox (badness 3302) in paragraph at lines 429--431
+Underfull \hbox (badness 3302) in paragraph at lines 428--430
 []|\T1/ptm/m/n/10.95 Administrator wci-ska przy-cisk za-rz¡-dzaj
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--464
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Underfull \hbox (badness 10000) in paragraph at lines 440--463
 
  []
 
-[28])) [29] (rozdzial4.tex [30
+)) [29] (rozdzial4.tex [30
 
 
 
 ]
 Rozdzia\l  4.
-<ArchitekturaSystemu.png, id=111, 668.4975pt x 565.11125pt>
+<ArchitekturaSystemu.png, id=110, 668.4975pt x 565.11125pt>
 File: ArchitekturaSystemu.png Graphic file (type png)
  <use ArchitekturaSystemu.png>
 Package pdftex.def Info: ArchitekturaSystemu.png used on input line 15.
@@ -1623,13 +1602,13 @@ Package pdftex.def Info: ArchitekturaSystemu.png used on input line 15.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31] <ERD.png, id=117, 680.5425pt x 600.2425pt>
+ [31] <ERD.png, id=116, 680.5425pt x 600.2425pt>
 File: ERD.png Graphic file (type png)
 
 <use ERD.png>
 Package pdftex.def Info: ERD.png used on input line 34.
 (pdftex.def)             Requested size: 340.27042pt x 300.12051pt.
- [32 <./ArchitekturaSystemu.png>] <ENTITIES.png, id=122, 689.57625pt x 695.59875pt>
+ [32 <./ArchitekturaSystemu.png>] <ENTITIES.png, id=121, 689.57625pt x 695.59875pt>
 File: ENTITIES.png Graphic file (type png)
  <use ENTITIES.png>
 Package pdftex.def Info: ENTITIES.png used on input line 42.
@@ -1638,7 +1617,7 @@ Package pdftex.def Info: ENTITIES.png used on input line 42.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33 <./ERD.png>]
-<DAO_UML.png, id=127, 1185.42876pt x 517.935pt>
+<DAO_UML.png, id=126, 1185.42876pt x 517.935pt>
 File: DAO_UML.png Graphic file (type png)
  <use DAO_UML.png>
 Package pdftex.def Info: DAO_UML.png used on input line 48.
@@ -1656,17 +1635,17 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 8.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [37]
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
 [38]
-Overfull \hbox (52.36105pt too wide) in paragraph at lines 52--53
+Overfull \hbox (52.36105pt too wide) in paragraph at lines 53--54
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (57.76111pt too wide) in paragraph at lines 53--54
+Overfull \hbox (57.76111pt too wide) in paragraph at lines 54--55
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1720,22 +1699,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--176
 Package logreq Info: Writing requests to 'praca.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 24014 strings out of 493673
- 438811 string characters out of 3143959
- 967864 words of memory out of 3000000
- 26980 multiletter control sequences out of 15000+200000
+ 23996 strings out of 493673
+ 438508 string characters out of 3143959
+ 968881 words of memory out of 3000000
+ 26965 multiletter control sequences out of 15000+200000
  77788 words of font info for 87 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  45i,12n,45p,10383b,3176s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
-rw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (49 pages, 588428 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr
+8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/hel
+vetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on praca.pdf (49 pages, 581020 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
+ 208 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

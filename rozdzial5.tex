@@ -2,9 +2,9 @@
 \label{cha:implementacja}
 Rozdział ten opisuje najważniejsze szczegóły implementacyjne projektu. W pierwszym podrozdziale znajduje się krótki opis narzędzi użytych do implementacji oraz sposób w jaki ich użyto. W drugim znajduje się opis podprojektów, a w trzecim metody zabezpieczeń systemu.
 \section{Użyte narzędzia}
-Aplikacja została zaimplementowana w środowisku programowania \textbf{Eclipse IDE for Java EE Developers}. Wybór padł właśnie na to IDE (ang. Integrated Development Environment) ponieważ posiada wszystkie niezbędne narzędzia do tworzenia aplikacji JEE. Oprócz domyślnie dostarczanych narzędzi przy implementacji skorzystano również z dodatkowego pluginu JBossTools.
+Aplikacja została zaimplementowana w środowisku programowania \textbf{Eclipse IDE for Java EE Developers}, ponieważ posiada wszystkie niezbędne narzędzia do tworzenia aplikacji JEE. Innym plusem użytego środowiska jest także dodatkowy plugin JBossTools odpowiadający za zarządzanie serwerem aplikacyjnym JBoss.
 
-Dodatkowym bardzo przydatnym narzędziem użytym do implementacji projektu jest \textbf{Apache Maven}, który jest odpowiedzialny za budowanie aplikacji. Tworzenie aplikacji przy użyciu narzędzia maven opiera się na pliku pom.xml (POM – ang. Project Object Model). Plik ten jest miejscem, w którym znajdują się wszystkie najważniejsze informację definiujące projekt, jego strukturę, to w jaki sposób będzie budowany oraz zależności (TODO: odwołanie do http://blog.atena.pl/wprowadzenie-do-mavena). Dużą zaletą Mavena jest łatwy sposób dodawania potrzebnych bibliotek do projektu, który odbywa się za pomocą dodawania kolejnych zależności do pliku pom.xml, które są automatycznie ściągane z repozytorium mavena. Przykład dodania biblioteki JSF w projekcie:
+Dodatkowym bardzo przydatnym narzędziem użytym do implementacji projektu jest \textbf{Apache Maven}, który jest odpowiedzialny za budowanie aplikacji. Tworzenie aplikacji przy użyciu narzędzia maven opiera się na pliku pom.xml (POM – ang. Project Object Model). Jest on miejscem, w którym znajdują się wszystkie najważniejsze informację definiujące projekt, jego strukturę, to w jaki sposób będzie budowany oraz zależności (TODO: odwołanie do http://blog.atena.pl/wprowadzenie-do-mavena). Dużą zaletą Mavena jest łątwy sposób dodawania potrzebnych bibliotek do projektu, co odbywa się za pomocą przyłączania kolejnych zależności do pliku pom.xml, które są automatycznie ściągane z repozytorium mavena. Przykład dodania biblioteki JSF w projekcie:
 \begin{lstlisting}
       <dependency>
          <groupId>org.jboss.spec.javax.faces</groupId>
@@ -20,6 +20,7 @@ Następnie z pośród tysięcy dostępnych szablonów trzeba wybrać ten, który
 \begin{lstlisting}[breaklines=true]
 remote -> org.jboss.spec.archetypes:jboss-javaee6-webapp-ear-archetype (An archetype that generates a starter Java EE 6 webapp project for JBoss AS 7.1 (by default) or EAP 6 (if the "enterprise" property is true). The project is an EAR, with an EJB-JAR and WAR)
 \end{lstlisting}
+
 Po wybraniu archetypu następuje definicja nazwy projektu oraz nazwy domyślnego pakietu. Wybrany pakiet dzieli projekt na trzy podprojekty: 
 \begin{itemize}
 	\item EJB - Odpowiedzialny za połączenie z bazą danych. Tutaj znajdują się klasy reprezentujące tabele w bazie danych oraz klasy Bean, które są odpowiedzialne za pobieranie i wstawianie danych z bazy. Podprojekt EJB eksportowany jest w postaci plików JAR (ang. Java archive),
@@ -87,7 +88,8 @@ public class User implements Serializable {
 	/* Metody get i set dla wszystkich atrubutów */
 }
 \end{lstlisting}
-W powyższym przykłądzie ominięte zostały metody get i set odpowiadające za pobieranie i ustawianie atrybutów klasy. Właściwości tabeli w wygenerowanej klasie są zachowane dzięki adnotacjom (@Adnotacja), gdzie @Id definiuje klucz główny tabeli, @OneToMany i @ManyToOne relacje zachodzące między tabelami i @Column podający dodatkowe właściwości kolumny, które nie mogą być przedstawione przy pomocy zmiennej w języku Java. Ponadto ponad definicją klasy znajdują się adnotacje @Entity, która oznacza klasę jako reprezentującą tabelę z bazy danych, @Table pozwalająca ustawić nazwę tabeli do której się odwołuje oraz @NamedQueries, która pozwala na zdefiniowanie w prosty sposób zapytań do bazy danych. Dzięki frameworkowi JPA i wygenerowanym przez niego klasom nie musimy się odwoływać do tabel z bazy, lecz do powstałych klas.
+
+W powyższym przykłądzie ominięte zostały metody get i set odpowiadające za pobieranie i ustawianie atrybutów klasy. Właściwości tabeli w wygenerowanej klasie są zachowane dzięki adnotacjom (@Adnotacja), gdzie @Id definiuje klucz główny tabeli, @OneToMany i @ManyToOne relacje zachodzące między tabelami i @Column podający dodatkowe właściwości kolumny, które nie mogą być przedstawione przy pomocy zmiennej w języku Java. Ponadto ponad definicją klasy znajdują się adnotacje @Entity, która oznacza klasę jako reprezentującą tabelę z bazy danych, @Table pozwalająca ustawić nazwę tabeli do której się odwołuje oraz @NamedQueries, która pozwala na zdefiniowanie w prosty sposób zapytań do bazy danych. Dzięki frameworkowi JPA i wygenerowanym przez niego klasom nie trzeba się odwoływać do tabel z bazy, lecz do powstałych klas.
 
 Aby ułatwić innym komponentom dostęp do bazy danych skorzystano z wzorca projektowego DAO (ang. Data Access Object), który tworzy jednolity interfejs odpowiedzialny za połączenie z bazą danych. DAO sprawia, że warstwa odpowiadająca za logike aplikacji nie musi znać szczegółów implementacyjnych udostępnionego interfejsu co uniezależna tą warstwę od sposobu dostępu do bazy danych. Poniżej zostanie przedstawiony przykładowy interfejs i jego implementacja odpowiedzialne za zarządzanie tabelą użytkownika.\\
 Interfejs:
@@ -207,13 +209,14 @@ public class UserDaoImpl implements UserDao {
 	}
 }
 \end{lstlisting}
-Gdzie najważniejszą zmienną odpowiedzialną za wykonywanie operacji na bazie danych jest instancja klasy EntityManager, która jest "wstrzyknięta" do klasy za pomocą adnotacji @PersistenceContext. Adnotacja @Stateless oznacza, że wstrzykniwany Bean (komponent wielokrotnego użytku w różnych miejscach aplikacji) będzie bezstanowy. Komponent ten jak sama nazwa wskazuje nie posiada żadnego stanu więc wszystkie takie komponenty wywoływane przez różnych użytkowników są identyczne. Adnotacja @Local mówi o tym, że implementowany interfejs znajduje się w tym samym środowisku. Adnotacja @TransactionAttribute(TransactionAttributeType.REQUIRED) wymusza na każdej metodzie, aby była wykonana w ramach tranzakcji już działającej, a jeżeli żadna nie jest rozpoczęta to musi być utworzona nowa. Stworzony bean wstrzykuje się w następujący sposób:
+
+Najważniejszą zmienną odpowiedzialną za wykonywanie operacji na bazie danych jest instancja klasy EntityManager, która jest "wstrzyknięta" do klasy za pomocą adnotacji @PersistenceContext. Adnotacja @Stateless oznacza, że wstrzykniwany Bean (komponent wielokrotnego użytku w różnych miejscach aplikacji) będzie bezstanowy. Komponent ten jak sama nazwa wskazuje nie posiada żadnego stanu więc wszystkie takie komponenty wywoływane przez różnych użytkowników są identyczne. Adnotacja @Local mówi o tym, że implementowany interfejs znajduje się w tym samym środowisku. Adnotacja @TransactionAttribute(TransactionAttributeType.REQUIRED) wymusza na każdej metodzie, aby była wykonana w ramach tranzakcji już działającej, a jeżeli żadna nie jest rozpoczęta to musi być utworzona nowa. Stworzony bean wstrzykuje się w następujący sposób:
 \begin{lstlisting}
 @EJB private UserDao dao;
 \end{lstlisting}
 
 \subsection{WEB}
-Użytkownik kożysta z aplikacją za pomocą przeglądarki internetowej, więc interfejsem są strony www. W implementowanej aplikacji są to pliki z rozszerzeniem xhtml. Głównym frameworkiem pomocnym przy tworzeniu tego interfejsu jest JSF, który udostępnia dodatkowe tagi pomocne przy tworzeniu stron, oraz klasy Managed Bean dzięki którym można się połączyć z tymi stronami.\\
+Użytkownik korzysta z aplikacją za pomocą przeglądarki internetowej, więc interfejsem są strony www. W implementowanej aplikacji są to pliki z rozszerzeniem xhtml. Głównym frameworkiem pomocnym przy tworzeniu tego interfejsu jest JSF, który udostępnia dodatkowe tagi pomocne przy tworzeniu stron oraz klasy Managed Bean dzięki którym można się połączyć z tymi stronami.\\
 Przykładowy formularz odpowiedzialny za rejestracje nowego użytkownika:
 \begin{lstlisting}[breaklines=true]
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -263,7 +266,7 @@ Przykładowy formularz odpowiedzialny za rejestracje nowego użytkownika:
 </h:body>
 </html>
 \end{lstlisting}
-Oraz klasa Managed Bean odpowiedzialna za obsługę powyższego formularza:
+Klasa Managed Bean odpowiedzialna za obsługę powyższego formularza:
 \begin{lstlisting}[breaklines=true]
 package com.inz.jsf;
 
@@ -323,12 +326,14 @@ public class UserManager {
 	}
 }
 \end{lstlisting}
+
 ManagedBean to klasa z frameworku JSF, która jest dostępna ze stron używających tagów JSF. Definiowana jest za pomocą adnotacji @ManagedBean. Adnotacja @SessionScoped definiuje, że Bean żyje tak długo jak sesja HTTP. 
 
 Aby użytkownik nie mógł wprowadzać nieprawidłowych danych przy tworzeniu formularza zastosowano mechanizm walidacji wprowadzanych danych. Użytkownik nie może zostawić pola nieuzupełnionego (required="true"), a ponadto do pola login, hasło i email są sprawdzane pod względem wprowadzanego tekstu. W polach email i hasło sprawdzany jest warunek długości oraz treści wprowadzanego tekstu za pomocą wyrażenia regularnego na stronie JSF (f:validateRegex pattern="warunek"). Pole login walidowane jest za pomocą MangedBeana pod względem długości tekstu (od 5 do 30 znaków) oraz unikalności loginu w systemie. Jeżeli któryś z wyżej opisanych warunków nie zostanie spełniony to po prawej stronie pola pojawi się odpowiedni komunikat w kolorze czerwonym.
 
 \section{Zabezpieczenia}
-Wszystkie usługi będą udostępniane tylko zalogowanym użytkownikom. Możliwość zarządzania plikami oraz kalendarzem wszystkich użytkowników posiada tylko administrator, co jest autoryzowane za pomocą bazy danych oraz funkcji serwera aplikacyjnego JBoss. Autentykacja użytkownika odbywać się będzie na podstawie danych z bazy danych oraz podsystemu bezpieczeństwa JBoss.\\
+Wszystkie usługi będą udostępniane tylko zalogowanym użytkownikom. Możliwość zarządzania plikami oraz kalendarzem wszystkich użytkowników posiada tylko administrator, co jest autoryzowane za pomocą bazy danych oraz podsystemu bezpieczeństwa serwera aplikacyjnego JBoss. 
+
 W celu stworzenia logowania do systemu skorzystano z pomocy modułu logowania \textit{Database} dostarczanego przez serwer aplikacyjny JBoss. Aby zrealizować autoryzację w pierwszej kolejności trzeba dodać odpowiednie elementy do pliku konfiguracyjnego serwera JBoss (standalone.xml):
 \begin{lstlisting}[breaklines=true]
 <security-domain name="postgresql-domain" cache-type="default">

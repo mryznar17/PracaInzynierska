@@ -1,20 +1,20 @@
 \chapter{Opracowanie koncepcji systemu}
 \label{cha:koncepcjaSystemu}
-Rozdział ten w dwóch podrozdziałach przedstawia koncepcję implementowanej aplikacji. W podrozdziale pierwszym opisany jest system, w drugim znajduje się specyfikacja wymagań. Dokumentacja projektu zawarta w tym rozdziale oraz w następnym została częściowo oprata na szablonie dokumentacji projektu stworzonym przez dr Piotra Szweda \cite{DOC01}.
+Niniejszy rozdział przedstawia koncepcję implementowanej aplikacji. Zapisany został w dwóch podrozdziałach, przy czym pierwszy z nich obejmuje opis systemu, drugi natomiast specyfikację wymagań. Dokumentacja projektu zawarta w tym rozdziale oraz w następnym została częściowo oprata na szablonie dokumentacji projektu stworzonym przez dr Piotra Szweda \cite{DOC01}.
 \section{Opis systemu}
-W tym podrozdziale opisany jest cel systemu, jego granice, lista możliwości systemu oraz jego użytkownicy. Ponadto za pomocą diagramów aktywności przedstawione jest działanie aplikacji.
+W tym podrozdziale opisany jest cel systemu, jego granice i lista możliwości, a także typy jego użytkowników. Ponadto za pomocą diagramów aktywności przedstawione jest działanie aplikacji.
 \subsection{Cel projektu}
-Celem projektu jest implementacja serwisu internetowego dedykowanego dla studentów w architekturze SOA. Głównym zadaniem serwisu ma być możliwość przechowywania plików oraz udostępnianie ich innym użytkownikom. Ponadto każdy z użytkowników będzie mógł korzystać z dedykowanego dla niego kalendarza, w którym może zapisywać ważne wydarzenia. Oprócz opisanych wcześniej funkcji użytkownik za pomocą strony powiadomień będzie mógł się dowiedzieć o nadchodzących wydarzeniach oraz o udostępnionych dla niego plikach.
+Celem projektu jest implementacja serwisu internetowego dedykowanego dla studentów w architekturze SOA. Głównym zadaniem serwisu będzie możliwość przechowywania plików oraz udostępnianie ich innym użytkownikom. Ponadto praktyczną funkcjonalnością będzie koordynacja kalendarza, dedykowanego indywidualnie dla każdego użytkownika. 
 
 \subsection{Użytkownicy}
 Grupę użytkowników stanowią wszyscy korzystającyz serwisu, z wyszczególnieniem:
 \begin{itemize}
 	\item \textbf{Użytkownik} - Docelowym użytkownikiem serwisu jest student potrzebujący dodać lub uzyskać dostęp do pliku poprzez udostępnienie od innych użytkowników serwisu. Nie jest warunkiem koniecznym, aby użytkownik był studentem,
-	\item \textbf{Administrator} - Użytkownik posiadający szystkie uprawnienia, takie jak usówanie użytkowników oraz wgląd do wszystkich plików w systemie.
+	\item \textbf{Administrator} - Użytkownik posiadający wszystkie uprawnienia, takie jak usuwanie użytkowników oraz wgląd do wszystkich plików w systemie.
 \end{itemize}
 
 \subsection{Granice systemu}
-Granicą systemu dla użytkownika jak i dla administratora będzie strona internetowa aplikacji. Zawarty będzie tam dostęp do wszystkich funkconalności systemu. Administrator dodatkowo będzie miał dostęp do specjalnego panelu za pomocą którego będzie mógł zarządzać kontami wszystkich użytkowników.
+Granicą systemu zarówno dla użytkownika jak i administratora, będą strony internetowe aplikacji, gdzie zawarty będzie dostęp do wszystkich funkconalności systemu. Dodatkowym uprawnieniem administratora będzie dostęp do specjalnego panelu za pomocą którego będzie mógł zarządzać kontami wszystkich użytkowników.
 
 Wejścia w systemie:
 \begin{itemize}
@@ -77,20 +77,21 @@ Wyjścia w systemie:
 	\caption{\label{fig:activity_04}Udostępnienie Pliku}
 	\end{figure}
 \section{Specyfikacja i analiza wymagań}
-Dzięki analizie wymagań funkcjonalnych możemy zidentyfikować oczekiwane zachowania budowanego systemu. Wymaganie funkcjonalne jest to „stwierdzenie, jakie usługi ma oferować system, jak ma reagować na określone dane wejściowe oraz jak ma się zachowywać w określonych sytuacjach. W niektórych wypadkach wymagania funkcjonalne określają, czego system nie powinien robić” \cite{DOC02}. W tym podrozdziale opisane zostaną lista wymagań wunkonalnych oraz niefunkcjonalnych oraz przedstawiony zostanie diagram przypadków użycia z dołączonymi scenariuszami.
+Dzięki analizie wymagań funkcjonalnych możemy zidentyfikować oczekiwane zachowania budowanego systemu. Wymaganie funkcjonalne jest to „stwierdzenie, jakie usługi ma oferować system, jak ma reagować na określone dane wejściowe oraz jak ma się zachowywać w określonych sytuacjach. W niektórych wypadkach wymagania funkcjonalne określają, czego system nie powinien robić” \cite{DOC02}. W tym podrozdziale opisane zostaną wymagania niefunkcjonalne oraz przedstawiony zostanie diagram przypadków użycia z dołączonymi scenariuszami.
 \subsection{Wymagania oprogramowania}
 Wymagania funkcjonalne zostały wypisane w podpunkcie \ref{listaFun}.
-Wymagania niefunkcjonalne:
+
+Wymagania niefunkcjonalne dzielimy na:
 \begin{enumerate}
 	\item Wymaganie organizacyjne:
 		\begin{itemize}
-			\item Implementacji : językiem programowania jest Java,
-			\item Użyteczności : Interfejs graficzny użytkownika jest przejrzysty i łatwy do przyswojenia,
+			\item Implementacji - językiem programowania jest Java,
+			\item Użyteczności - interfejs graficzny użytkownika jest przejrzysty i łatwy do przyswojenia,
 		\end{itemize}
 	\item Wymagania zewnętrzne:		
 		\begin{itemize}
-			\item Poufności - Projekt przestrzega wymagań prawnych ustanowionych w Ustawie o Ochronie Danych Osobowych.
-			\item Bezpieczeństwa : System nie pozwala użytkownikom na nieautoryzowany dostęp do bazy danych
+			\item Poufności - projekt przestrzega wymagań prawnych ustanowionych w Ustawie o Ochronie Danych Osobowych,
+			\item Bezpieczeństwa - system nie pozwala użytkownikom na nieautoryzowany dostęp do bazy danych.
 		\end{itemize}
 \end{enumerate}
 \subsection{Ryzyka operacyjne}
