@@ -59,6 +59,23 @@
       \field{note}{\\\texttt{http://javastart.pl/static/jee/jee\-wprowadzenie\-do\-javy\-enterprise\-edition/}}
       \field{title}{{JEE - wprowadzenie do Javy Enterprise Edition}}
     \endentry
+    \entry{HIB01}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=1689b83fac4c4a4ef8d1190a50ade954}{Krzemień;}{K\bibinitperiod}{D.}{D\bibinitperiod}{}{}{R.Rusiecki}{R\bibinitperiod}}%
+      }
+      \list{organization}{1}{%
+        {Akademia Górniczo\-Hutnicza}%
+      }
+      \strng{namehash}{1689b83fac4c4a4ef8d1190a50ade954}
+      \strng{fullhash}{1689b83fac4c4a4ef8d1190a50ade954}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{polish}
+      \field{note}{\\\texttt{http://student.agh.edu.pl/drusieck/hibernate/}}
+      \field{title}{{Hibernate + Java}}
+    \endentry
     \entry{SA01}{manual}{}
       \name{author}{1}{}{%
         {{hash=b43c806b73cf57ce858d38773bac6b91}{Matusik}{M\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
@@ -130,6 +147,21 @@
       \field{langid}{english}
       \field{note}{\\\texttt{http://www.tutorialspoint.com/design\_pattern/mvc\_pattern.htm}}
       \field{title}{{Design Patterns - MVC Pattern}}
+    \endentry
+    \entry{MV01}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=e640a8e7a81b59a6aa8e2c22c199198d}{Łaguna}{Ł\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e640a8e7a81b59a6aa8e2c22c199198d}
+      \strng{fullhash}{e640a8e7a81b59a6aa8e2c22c199198d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{epolish}
+      \field{note}{\\\texttt{http://blog.atena.pl/wprowadzenie\-do\-mavena}}
+      \field{title}{{Wprowadzenie do Maven’a}}
+      \field{year}{2011}
     \endentry
   \endsortlist
 \endrefsection
