@@ -45,3 +45,5 @@
 \select@language {polish}
 \select@language {english}
 \select@language {polish}
+\select@language {english}
+\select@language {polish}

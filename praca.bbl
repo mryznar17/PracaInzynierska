@@ -163,6 +163,17 @@
       \field{title}{{Wprowadzenie do Maven’a}}
       \field{year}{2011}
     \endentry
+    \entry{ECL01}{manual}{}
+      \list{organization}{1}{%
+        {Eclipse}%
+      }
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{note}{\\\texttt{http://help.eclipse.org/mars/index.jsp\text{?}topic=\%2Forg.eclipse.\\jst.j2ee.doc.user\%2Ftopics\%2Fcjearproj.html}}
+      \field{title}{{Enterprise application projects}}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput
