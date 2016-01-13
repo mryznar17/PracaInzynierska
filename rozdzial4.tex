@@ -2,13 +2,11 @@
 \label{cha:projektSystemu}
 W tym rozdziale omówiona zostanie architektura implementowanego systemu. W pierwszym podrozdziale znajduje się ogólny opis używanej archikterktury, w następnym model bazy danych, a w ostatnim model klas.
 \section{Opis architektutry}
-Implementowany projekt jest oparty na architekturze SOA (wyjaśnionej w podrozdziale \ref{sec:soa}), która została wybrana przede wszystkim ze względu na podział aplikacji na niezależne od siebie moduły. Dzięki modularności w łatwy sposób można dodawać nowe funkcjonalności do projektu poprzez wstawianie kolejnych usług. Oprócz opisanej wcześniej architektury do implementacji projektu został użyty wzorzec projektowy MVC (\textit{ang. Model View Controller}), który jak sama nazwa wskazuje odpowiada za podzielenie aplikacji na trzy częśći:
-\begin{itemize}
-	\item Model - część odpowiedzialna za zarządzanie danymi czyli za połączenie z bazą danych,
-	\item View - widok odpowiada za interakcję użytkownika z systemem czyli graficzny interfejs użytkownika,
-	\item Controller - kontroler oddziałuje pomiędzy modelem a widokiem i kontroluje przepływ danych pomiędzy nimi \cite{MVC01}.
-\end{itemize}
-
+Implementowany projekt jest oparty na architekturze SOA (wyjaśnionej w podrozdziale \ref{sec:soa}), która została wybrana przede wszystkim ze względu na podział aplikacji na niezależne od siebie moduły. Dzięki modularności w łatwy sposób można dodawać nowe funkcjonalności do projektu poprzez wstawianie kolejnych usług. Oprócz opisanej wcześniej architektury do implementacji projektu został użyty wzorzec projektowy MVC (\textit{ang. Model View Controller}), który jak sama nazwa wskazuje odpowiada za podzielenie aplikacji na trzy części:\\\\
+- Model - część odpowiedzialna za zarządzanie danymi czyli za połączenie z bazą danych,\\\\
+- View - widok odpowiada za interakcję użytkownika z systemem czyli graficzny interfejs użytkownika,\\\\
+- Controller - kontroler oddziałuje pomiędzy modelem a widokiem i kontroluje przepływ danych pomiędzy nimi \cite{MVC01}.\\\\
+\newpage
 Opisywaną architekturę przedstawia poniższy model komponentów:
 \begin{figure}[H]
 \centering
@@ -28,13 +26,14 @@ Baza danych składa się z sześciu tabel:
 	\item Event - prezentuje wydarzenie,
 	\item Shared\_File - dzięki tej tabeli użytkownik może dawać dostęp do swojego pliku innym użytkownikom.
 \end{itemize}
+\newpage
 Model bazy danych przedstawiony jest poniżej na diagramie ERD:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{ERD}
 \caption{\label{fig:diag_02}Diagram ERD}
 \end{figure}
-
+\newpage
 \section{Model klas}
 Model klas w postaci diagramu UML reprezentujący tabele z bazy danych:
 \begin{figure}[H]
@@ -42,6 +41,7 @@ Model klas w postaci diagramu UML reprezentujący tabele z bazy danych:
 \includegraphics[scale=0.5]{ENTITIES}
 \caption{\label{fig:uml_01}Diagram Klas Encji}
 \end{figure}
+\newpage
 Za połączenie z bazą danych odpowiada wzorzec projektowy DAO (omówiony w \ref{subsec:ejb}), który przedstawiony jest na poniższym diagramie.
 \begin{figure}[H]
 \centering
